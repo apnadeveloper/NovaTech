@@ -1,20 +1,27 @@
-import React, { useState } from 'react';
-import { Github, Twitter, Instagram, Linkedin, Mail, ArrowRight } from 'lucide-react';
+import React, { useState, Suspense, lazy } from 'react';
+import { Github, Twitter, Instagram, Linkedin, Mail, ArrowRight, Loader2 } from 'lucide-react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import Services from './components/Services';
-import Portfolio from './components/Portfolio';
-import Testimonials from './components/Testimonials';
-import Team from './components/Team';
-import Contact from './components/Contact';
-import About from './components/About';
-import AboutPreview from './components/AboutPreview';
-import WhyChooseUs from './components/WhyChooseUs';
-import WorkProcess from './components/WorkProcess';
 import TeaserChat from './components/TeaserChat';
 import Background from './components/Background';
 import WhatsAppBtn from './components/WhatsAppBtn';
 import RevealOnScroll from './components/RevealOnScroll';
+
+// Lazy load heavy components
+const Services = lazy(() => import('./components/Services'));
+const Portfolio = lazy(() => import('./components/Portfolio'));
+const Team = lazy(() => import('./components/Team'));
+const Contact = lazy(() => import('./components/Contact'));
+const About = lazy(() => import('./components/About'));
+const AboutPreview = lazy(() => import('./components/AboutPreview'));
+const WhyChooseUs = lazy(() => import('./components/WhyChooseUs'));
+const WorkProcess = lazy(() => import('./components/WorkProcess'));
+
+const PageLoader = () => (
+  <div className="min-h-[50vh] flex items-center justify-center">
+    <Loader2 className="w-8 h-8 text-blue-500 animate-spin" />
+  </div>
+);
 
 const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState('home');
@@ -25,25 +32,18 @@ const App: React.FC = () => {
   };
 
   const renderPage = () => {
-    switch (currentPage) {
-      case 'home':
-        return (
+    return (
+      <Suspense fallback={<PageLoader />}>
+        {currentPage === 'home' && (
           <>
             <Hero />
-            
             <WhyChooseUs />
-
             <WorkProcess />
-            
             <Services isPreview={true} onNavigate={handleNavigate} />
-            
             <Portfolio isPreview={true} onNavigate={handleNavigate} />
-            
             <AboutPreview onNavigate={handleNavigate} />
-
             <Team isPreview={true} onNavigate={handleNavigate} />
             
-            {/* Call to Action for Contact */}
             <section className="py-24 px-6 relative z-10">
               <RevealOnScroll>
                 <div className="max-w-5xl mx-auto bg-gradient-to-r from-blue-900/40 to-purple-900/40 border border-white/10 rounded-3xl p-12 text-center relative overflow-hidden">
@@ -62,20 +62,14 @@ const App: React.FC = () => {
               </RevealOnScroll>
             </section>
           </>
-        );
-      case 'services':
-        return <Services isPreview={false} onNavigate={handleNavigate} />;
-      case 'work':
-        return <Portfolio isPreview={false} onNavigate={handleNavigate} />;
-      case 'team':
-        return <div className="pt-20"><Team isPreview={false} onNavigate={handleNavigate} /></div>;
-      case 'contact':
-        return <Contact />;
-      case 'about':
-        return <About />;
-      default:
-        return <Hero />;
-    }
+        )}
+        {currentPage === 'services' && <Services isPreview={false} onNavigate={handleNavigate} />}
+        {currentPage === 'work' && <Portfolio isPreview={false} onNavigate={handleNavigate} />}
+        {currentPage === 'team' && <div className="pt-20"><Team isPreview={false} onNavigate={handleNavigate} /></div>}
+        {currentPage === 'contact' && <Contact />}
+        {currentPage === 'about' && <About />}
+      </Suspense>
+    );
   };
 
   return (
@@ -88,7 +82,6 @@ const App: React.FC = () => {
         {renderPage()}
       </main>
 
-      {/* Footer */}
       <footer className="relative z-10 w-full p-8 border-t border-white/5 bg-slate-950">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex flex-col items-center md:items-start gap-1">
@@ -101,23 +94,22 @@ const App: React.FC = () => {
           </div>
           
           <div className="flex items-center gap-6">
-            <a href="#" className="text-gray-500 hover:text-blue-400 transition-colors">
+            <a href="#" aria-label="Twitter" className="text-gray-500 hover:text-blue-400 transition-colors">
               <Twitter className="w-5 h-5" />
             </a>
-            <a href="#" className="text-gray-500 hover:text-blue-400 transition-colors">
+            <a href="#" aria-label="LinkedIn" className="text-gray-500 hover:text-blue-400 transition-colors">
               <Linkedin className="w-5 h-5" />
             </a>
-            <a href="#" className="text-gray-500 hover:text-pink-400 transition-colors">
+            <a href="#" aria-label="Instagram" className="text-gray-500 hover:text-pink-400 transition-colors">
               <Instagram className="w-5 h-5" />
             </a>
-            <a href="mailto:info@apnadeveloper.com" className="text-gray-500 hover:text-white transition-colors">
+            <a href="mailto:info@apnadeveloper.com" aria-label="Email" className="text-gray-500 hover:text-white transition-colors">
               <Mail className="w-5 h-5" />
             </a>
           </div>
         </div>
       </footer>
 
-      {/* AI Assistant */}
       <TeaserChat />
     </div>
   );

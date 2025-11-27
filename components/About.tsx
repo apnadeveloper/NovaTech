@@ -13,7 +13,7 @@ const About: React.FC = () => {
             <h1 className="text-4xl sm:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400 mb-6">
               We Are Nova Tech
             </h1>
-            <p className="text-xl text-gray-400 leading-relaxed">
+            <p className="text-xl text-gray-300 leading-relaxed">
               Founded in 2023, Nova Tech emerged from a simple belief: Digital marketing shouldn't be a black box. We combine creative artistry with data science to build brands that don't just survive, but thrive in the digital age.
             </p>
           </RevealOnScroll>
@@ -24,8 +24,11 @@ const About: React.FC = () => {
           <RevealOnScroll delay={0.2}>
             <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
               <img 
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop" 
+                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop" 
                 alt="Team working together" 
+                loading="lazy"
+                width="800"
+                height="600"
                 className="w-full h-full object-cover opacity-80 hover:scale-105 transition duration-700"
               />
             </div>
@@ -35,14 +38,14 @@ const About: React.FC = () => {
             <div className="space-y-8">
               <div>
                   <h3 className="text-2xl font-bold text-white mb-3">Our Mission</h3>
-                  <p className="text-gray-400 leading-relaxed">
+                  <p className="text-gray-300 leading-relaxed">
                   To empower businesses of all sizes with enterprise-grade digital strategies. We believe in transparency, agility, and results that speak for themselves. We aim to democratize access to high-end SEO and development tools.
                   </p>
               </div>
               
               <div>
                   <h3 className="text-2xl font-bold text-white mb-3">Technology First</h3>
-                  <p className="text-gray-400 leading-relaxed">
+                  <p className="text-gray-300 leading-relaxed">
                   We are not just marketers; we are technologists. We utilize cutting-edge AI for predictive analytics, automated reporting, and personalized content generation. This ensures your campaigns are always ahead of the curve.
                   </p>
               </div>

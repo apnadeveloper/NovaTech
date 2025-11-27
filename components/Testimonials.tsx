@@ -50,6 +50,9 @@ const Testimonials: React.FC = () => {
                   <img 
                     src={item.image} 
                     alt={item.author} 
+                    loading="lazy"
+                    width="48"
+                    height="48"
                     className="w-12 h-12 rounded-full object-cover border-2 border-purple-500/20" 
                   />
                   <div>

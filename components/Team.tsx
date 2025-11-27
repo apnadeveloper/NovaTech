@@ -12,25 +12,25 @@ const team = [
     name: "Alex Carter",
     role: "Founder & CEO",
     bio: "Visionary leader with 10+ years in digital strategy. Formerly led growth at major tech startups.",
-    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=800&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=400&auto=format&fit=crop"
   },
   {
     name: "Sofia Davis",
     role: "Creative Director",
     bio: "Award-winning designer obsessed with UX/UI. Brings a blend of art and functionality to every project.",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=400&auto=format&fit=crop"
   },
   {
     name: "James Wilson",
     role: "Head of SEO",
     bio: "Data analyst turned growth hacker. Master of technical SEO and algorithmic patterns.",
-    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=800&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=400&auto=format&fit=crop"
   },
   {
     name: "Maya Patel",
     role: "Lead Developer",
     bio: "Full-stack wizard specializing in React & Node. Ensures our solutions are as robust as they are beautiful.",
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=800&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=400&auto=format&fit=crop"
   }
 ];
 
@@ -44,7 +44,7 @@ const Team: React.FC<TeamProps> = ({ isPreview = false, onNavigate }) => {
               <h2 className="text-3xl sm:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">
                 {isPreview ? "Meet the Leadership" : "The Team Behind the Magic"}
               </h2>
-              <p className="text-gray-400 max-w-2xl mx-auto">
+              <p className="text-gray-300 max-w-2xl mx-auto">
                 A diverse team of strategists, creatives, and engineers passionate about your success. 
                 We are not just a service provider; we are an extension of your team.
               </p>
@@ -59,16 +59,19 @@ const Team: React.FC<TeamProps> = ({ isPreview = false, onNavigate }) => {
                     <img 
                       src={member.image} 
                       alt={member.name} 
+                      loading="lazy"
+                      width="200"
+                      height="200"
                       className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-500 transform group-hover:scale-110" 
                     />
                   </div>
                   <h3 className="text-xl font-bold text-white mb-1">{member.name}</h3>
                   <p className="text-purple-400 text-sm mb-3 font-medium">{member.role}</p>
-                  <p className="text-gray-500 text-sm mb-4 line-clamp-3">{member.bio}</p>
+                  <p className="text-gray-400 text-sm mb-4 line-clamp-3">{member.bio}</p>
                   <div className="flex justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <a href="#" className="text-gray-500 hover:text-white"><Linkedin className="w-4 h-4" /></a>
-                    <a href="#" className="text-gray-500 hover:text-white"><Twitter className="w-4 h-4" /></a>
-                    <a href="#" className="text-gray-500 hover:text-white"><Mail className="w-4 h-4" /></a>
+                    <a href="#" aria-label="LinkedIn" className="text-gray-500 hover:text-white"><Linkedin className="w-4 h-4" /></a>
+                    <a href="#" aria-label="Twitter" className="text-gray-500 hover:text-white"><Twitter className="w-4 h-4" /></a>
+                    <a href="#" aria-label="Email" className="text-gray-500 hover:text-white"><Mail className="w-4 h-4" /></a>
                   </div>
                 </div>
               </RevealOnScroll>
@@ -98,7 +101,7 @@ const Team: React.FC<TeamProps> = ({ isPreview = false, onNavigate }) => {
                 <RevealOnScroll>
                    <div className="text-center mb-16">
                      <h2 className="text-3xl font-bold text-white mb-4">Our Culture</h2>
-                     <p className="text-gray-400 max-w-2xl mx-auto">We believe that happy people make the best products. Our culture is built on trust, continuous learning, and a healthy work-life balance.</p>
+                     <p className="text-gray-300 max-w-2xl mx-auto">We believe that happy people make the best products. Our culture is built on trust, continuous learning, and a healthy work-life balance.</p>
                    </div>
                 </RevealOnScroll>
 

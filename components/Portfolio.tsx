@@ -11,49 +11,49 @@ const projects = [
   {
     title: "Neon FinTech",
     category: "Web Design & UI/UX",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600&auto=format&fit=crop",
     description: "High-performance interface for a next-gen banking platform."
   },
   {
     title: "RankBoost Pro",
     category: "SEO Optimization",
-    image: "https://images.unsplash.com/photo-1572021335469-31706a17aaef?q=80&w=2070&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1572021335469-31706a17aaef?q=80&w=600&auto=format&fit=crop",
     description: "Achieved #1 rankings for high-volume keywords in 3 months."
   },
   {
     title: "ClickFlow Ads",
     category: "PPC Advertising",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=600&auto=format&fit=crop",
     description: "Reduced CPA by 40% while doubling conversion volume."
   },
   {
     title: "ViralStream",
     category: "Social Media",
-    image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1974&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=600&auto=format&fit=crop",
     description: "Cross-platform campaign reaching 5M+ organic impressions."
   },
   {
     title: "CodeCraft SaaS",
     category: "Web Development",
-    image: "https://images.unsplash.com/photo-1555099962-4199c345e5dd?q=80&w=2070&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1555099962-4199c345e5dd?q=80&w=600&auto=format&fit=crop",
     description: "Full-stack React application with real-time data analytics."
   },
   {
     title: "StoryBrand Blog",
     category: "Content Strategy",
-    image: "https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=2073&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=600&auto=format&fit=crop",
     description: "Content hub implementation increasing retention by 200%."
   },
   {
     title: "MarketPulse",
     category: "Data Analytics",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600&auto=format&fit=crop",
     description: "Custom dashboarding for enterprise marketing teams."
   },
   {
     title: "MailScale",
     category: "Email Marketing",
-    image: "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?q=80&w=2070&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?q=80&w=600&auto=format&fit=crop",
     description: "Automated drip campaigns generating $50k monthly revenue."
   }
 ];
@@ -71,7 +71,7 @@ const Portfolio: React.FC<PortfolioProps> = ({ isPreview = false, onNavigate }) 
                 <h2 className="text-3xl sm:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">
                   {isPreview ? "Featured Projects" : "Our Work Portfolio"}
                 </h2>
-                <p className="text-gray-400 max-w-xl">
+                <p className="text-gray-300 max-w-xl">
                   We engineer digital experiences that drive measurable growth across all channels.
                   From technical SEO audits to full-scale web applications.
                 </p>
@@ -97,6 +97,9 @@ const Portfolio: React.FC<PortfolioProps> = ({ isPreview = false, onNavigate }) 
                     <img 
                       src={project.image} 
                       alt={project.title} 
+                      loading="lazy"
+                      width="600"
+                      height="800"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-40" 
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/50 to-transparent"></div>
@@ -106,7 +109,7 @@ const Portfolio: React.FC<PortfolioProps> = ({ isPreview = false, onNavigate }) 
                     <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                       <span className="text-xs font-medium text-blue-400 uppercase tracking-wider mb-2 block">{project.category}</span>
                       <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
-                      <p className="text-sm text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                      <p className="text-sm text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
                         {project.description}
                       </p>
                     </div>
@@ -143,7 +146,7 @@ const Portfolio: React.FC<PortfolioProps> = ({ isPreview = false, onNavigate }) 
               <RevealOnScroll>
                 <div className="text-center mb-16">
                   <h2 className="text-3xl font-bold text-white mb-4">Our Design Philosophy</h2>
-                  <p className="text-gray-400 max-w-2xl mx-auto">We don't just create pretty interfaces. We build functional systems rooted in user behavior and business logic.</p>
+                  <p className="text-gray-300 max-w-2xl mx-auto">We don't just create pretty interfaces. We build functional systems rooted in user behavior and business logic.</p>
                 </div>
               </RevealOnScroll>
 

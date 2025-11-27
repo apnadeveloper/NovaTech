@@ -55,7 +55,7 @@ const TeaserChat: React.FC = () => {
                 </span>
               </div>
             </div>
-            <button onClick={() => setIsOpen(false)} className="text-gray-400 hover:text-white transition-colors">
+            <button onClick={() => setIsOpen(false)} className="text-gray-400 hover:text-white transition-colors" aria-label="Minimize Chat">
               <Minimize2 className="w-4 h-4" />
             </button>
           </div>
@@ -97,11 +97,13 @@ const TeaserChat: React.FC = () => {
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Ask about our services..."
                 className="flex-1 bg-transparent text-sm text-white placeholder-gray-500 outline-none px-2"
+                aria-label="Chat message"
               />
               <button 
                 type="submit" 
                 disabled={!query.trim() || isLoading}
                 className="p-2 bg-blue-600 rounded-lg hover:bg-blue-500 text-white disabled:opacity-50 disabled:hover:bg-blue-600 transition-colors"
+                aria-label="Send message"
               >
                 <Send className="w-4 h-4" />
               </button>
@@ -117,6 +119,7 @@ const TeaserChat: React.FC = () => {
           group relative flex items-center justify-center w-14 h-14 rounded-full shadow-2xl transition-all duration-300 hover:scale-110
           ${isOpen ? 'bg-gray-800 rotate-90' : 'bg-gradient-to-br from-blue-600 to-purple-600'}
         `}
+        aria-label={isOpen ? "Close Chat" : "Open Chat"}
       >
         {!isOpen && <span className="absolute -top-1 -right-1 w-3.5 h-3.5 bg-green-500 rounded-full animate-pulse border-2 border-slate-950"></span>}
         {isOpen ? (
