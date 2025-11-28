@@ -11,7 +11,7 @@ const TeaserChat: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [query, setQuery] = useState('');
   const [messages, setMessages] = useState<Message[]>([
-    { role: 'ai', text: "Welcome to Nova Tech! I'm your digital marketing assistant. How can I help you grow your brand today?" }
+    { role: 'ai', text: "Welcome to Apna Developer! I'm your digital marketing assistant. How can I help you grow your brand today?" }
   ]);
   const [isLoading, setIsLoading] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -48,7 +48,7 @@ const TeaserChat: React.FC = () => {
                 <Bot className="w-4 h-4 text-blue-300" />
               </div>
               <div>
-                <h3 className="font-semibold text-sm text-white">Nova Support</h3>
+                <h3 className="font-semibold text-sm text-white">Apna Support</h3>
                 <span className="flex items-center gap-1.5 text-[10px] text-green-400">
                   <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span>
                   Online

@@ -4,7 +4,7 @@ import RevealOnScroll from './RevealOnScroll';
 
 const testimonials = [
   {
-    quote: "Nova Tech didn't just rebuild our website; they completely revitalized our brand. Our leads have doubled since the launch.",
+    quote: "Apna Developer didn't just rebuild our website; they completely revitalized our brand. Our leads have doubled since the launch.",
     author: "Sarah Jenkins",
     role: "CMO, FinTech Solutions",
     image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=150&auto=format&fit=crop"

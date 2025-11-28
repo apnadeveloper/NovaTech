@@ -43,7 +43,7 @@ const Newsletter: React.FC = () => {
         },
         body: JSON.stringify({ 
           email: email,
-          _subject: "New Project Nova Signup",
+          _subject: "New Apna Developer Newsletter Signup",
           message: `New newsletter signup from: ${email}`
         })
       });

@@ -11,10 +11,10 @@ const About: React.FC = () => {
           <RevealOnScroll>
             <span className="text-purple-500 font-semibold tracking-wider uppercase text-sm mb-2 block">Our Story</span>
             <h1 className="text-4xl sm:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400 mb-6">
-              We Are Nova Tech
+              We Are Apna Developer
             </h1>
             <p className="text-xl text-gray-300 leading-relaxed">
-              Founded in 2023, Nova Tech emerged from a simple belief: Digital marketing shouldn't be a black box. We combine creative artistry with data science to build brands that don't just survive, but thrive in the digital age.
+              Founded in 2023, Apna Developer emerged from a simple belief: Digital marketing shouldn't be a black box. We combine creative artistry with data science to build brands that don't just survive, but thrive in the digital age.
             </p>
           </RevealOnScroll>
         </div>

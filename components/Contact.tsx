@@ -6,7 +6,7 @@ const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    service: 'SEO',
+    service: 'Website Design',
     message: ''
   });
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
@@ -51,7 +51,7 @@ const Contact: React.FC = () => {
 
       if (response.ok) {
         setStatus('success');
-        setFormData({ name: '', email: '', service: 'SEO', message: '' });
+        setFormData({ name: '', email: '', service: 'Website Design', message: '' });
       } else {
         setStatus('error');
         setErrorMessage('Submission failed. Please try again.');
@@ -101,7 +101,7 @@ const Contact: React.FC = () => {
                 <div>
                   <h3 className="text-lg font-semibold text-white mb-1">Email Us</h3>
                   <a href="mailto:info@apnadeveloper.com" className="text-gray-400 hover:text-white transition-colors block break-all">
-                    info@novatech.com
+                    info@apnadeveloper.com
                   </a>
                 </div>
               </div>
@@ -159,10 +159,18 @@ const Contact: React.FC = () => {
                     onChange={e => setFormData({...formData, service: e.target.value})}
                     className="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors appearance-none"
                   >
-                    <option value="SEO">SEO Optimization</option>
-                    <option value="PPC">PPC Advertising</option>
-                    <option value="Social Media">Social Media</option>
-                    <option value="Web Development">Web Development</option>
+                    <option value="Website Design">Website Design</option>
+                    <option value="Website Development">Website Development</option>
+                    <option value="eCommerce Development">eCommerce Development</option>
+                    <option value="Shopify Development">Shopify Development</option>
+                    <option value="WordPress Development">WordPress Development</option>
+                    <option value="Digital Marketing">Digital Marketing</option>
+                    <option value="SEO Optimization">SEO Optimization</option>
+                    <option value="Speed & Web Security">Speed & Web Security</option>
+                    <option value="Graphic Design">Graphic Design</option>
+                    <option value="Video Editing">Video Editing</option>
+                    <option value="Social Media Marketing">Social Media Marketing</option>
+                    <option value="Python Script Development">Python Script Development</option>
                     <option value="Other">Other</option>
                   </select>
                 </div>

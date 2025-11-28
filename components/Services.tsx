@@ -1,5 +1,9 @@
 import React from 'react';
-import { Search, BarChart3, Globe, PenTool, Share2, Mail, ArrowRight, ShoppingBag, Stethoscope, Landmark, Briefcase, GraduationCap, Building2, Plus, Minus } from 'lucide-react';
+import { 
+  Palette, Code2, ShoppingBag, Store, FileCode, Megaphone, Search, 
+  ShieldCheck, PenTool, Video, Share2, Terminal, ArrowRight, 
+  Stethoscope, Landmark, Briefcase, GraduationCap, Building2, Plus, Minus 
+} from 'lucide-react';
 import RevealOnScroll from './RevealOnScroll';
 
 interface ServicesProps {
@@ -9,34 +13,64 @@ interface ServicesProps {
 
 const services = [
   {
-    icon: <Search className="w-6 h-6 text-blue-400" />,
+    icon: <Palette className="w-6 h-6 text-pink-400" />,
+    title: "Website Design",
+    description: "Stunning, user-centric designs that captivate your audience and reflect your brand identity."
+  },
+  {
+    icon: <Code2 className="w-6 h-6 text-blue-400" />,
+    title: "Website Development",
+    description: "Robust, scalable, and high-performance websites built with modern technologies like React and Next.js."
+  },
+  {
+    icon: <ShoppingBag className="w-6 h-6 text-purple-400" />,
+    title: "eCommerce Development",
+    description: "Custom online stores optimized for conversions, seamless checkout experiences, and inventory management."
+  },
+  {
+    icon: <Store className="w-6 h-6 text-green-400" />,
+    title: "Shopify Development",
+    description: "Expert Shopify setup, theme customization, and app integration to power your dropshipping or retail business."
+  },
+  {
+    icon: <FileCode className="w-6 h-6 text-orange-400" />,
+    title: "WordPress Development",
+    description: "Flexible and easy-to-manage WordPress sites, from custom themes to plugin development."
+  },
+  {
+    icon: <Megaphone className="w-6 h-6 text-red-400" />,
+    title: "Digital Marketing",
+    description: "Comprehensive strategies including PPC, email marketing, and content campaigns to drive traffic and sales."
+  },
+  {
+    icon: <Search className="w-6 h-6 text-cyan-400" />,
     title: "SEO Optimization",
-    description: "Dominate search rankings with technical SEO, keyword strategy, and backlink building. We ensure your brand is visible when it matters most."
+    description: "Boost your organic visibility with technical SEO, keyword research, and on-page optimization."
   },
   {
-    icon: <BarChart3 className="w-6 h-6 text-purple-400" />,
-    title: "PPC Advertising",
-    description: "High-ROI campaigns on Google Ads and Facebook. We turn clicks into paying customers through precision targeting and A/B testing."
+    icon: <ShieldCheck className="w-6 h-6 text-emerald-400" />,
+    title: "Speed & Web Security",
+    description: "Lightning-fast load times and ironclad security protocols to protect your data and improve user experience."
   },
   {
-    icon: <Globe className="w-6 h-6 text-green-400" />,
-    title: "Web Development",
-    description: "Blazing fast, responsive websites built with Next.js and React. Our code is clean, SEO-friendly, and optimized for maximum conversion."
+    icon: <PenTool className="w-6 h-6 text-yellow-400" />,
+    title: "Graphic Design",
+    description: "Eye-catching visuals for logos, branding materials, social media posts, and marketing collateral."
   },
   {
-    icon: <Share2 className="w-6 h-6 text-pink-400" />,
-    title: "Social Media",
-    description: "Community management and viral content creation for Instagram, LinkedIn, and X. Build a loyal following that advocates for your brand."
+    icon: <Video className="w-6 h-6 text-indigo-400" />,
+    title: "Video Editing",
+    description: "Professional video editing for commercials, social media reels, and corporate presentations."
   },
   {
-    icon: <PenTool className="w-6 h-6 text-orange-400" />,
-    title: "Content Strategy",
-    description: "Compelling storytelling that aligns with your brand voice. From blog posts to whitepapers, we create content that drives authority."
+    icon: <Share2 className="w-6 h-6 text-rose-400" />,
+    title: "Social Media Marketing",
+    description: "Engage your audience on Instagram, LinkedIn, and TikTok with viral content strategies."
   },
   {
-    icon: <Mail className="w-6 h-6 text-cyan-400" />,
-    title: "Email Marketing",
-    description: "Automated flows and newsletters that nurture leads and retain customers. Personalized messaging at scale."
+    icon: <Terminal className="w-6 h-6 text-slate-400" />,
+    title: "Python Script Development",
+    description: "Custom automation scripts, data scraping, and backend logic to streamline your business operations."
   }
 ];
 
@@ -161,7 +195,7 @@ const Services: React.FC<ServicesProps> = ({ isPreview = false, onNavigate }) =>
               <RevealOnScroll>
                 <div className="text-center mb-16">
                    <h2 className="text-3xl font-bold text-white mb-4">Frequently Asked Questions</h2>
-                   <p className="text-gray-400">Everything you need to know about working with Nova Tech.</p>
+                   <p className="text-gray-400">Everything you need to know about working with Apna Developer.</p>
                 </div>
               </RevealOnScroll>
               

@@ -9,52 +9,118 @@ interface PortfolioProps {
 
 const projects = [
   {
-    title: "Neon FinTech",
-    category: "Web Design & UI/UX",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600&auto=format&fit=crop",
-    description: "High-performance interface for a next-gen banking platform."
+    title: "A1 VPS Hosting",
+    category: "Web Hosting",
+    image: "https://images.unsplash.com/photo-1601597111158-2fceff292cdc?q=80&w=800&auto=format&fit=crop", // Updated Server Image
+    description: "High-performance VPS hosting platform with automated provisioning."
   },
   {
-    title: "RankBoost Pro",
-    category: "SEO Optimization",
-    image: "https://images.unsplash.com/photo-1572021335469-31706a17aaef?q=80&w=600&auto=format&fit=crop",
-    description: "Achieved #1 rankings for high-volume keywords in 3 months."
+    title: "Aspect Zone Properties",
+    category: "Real Estate",
+    image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=800&auto=format&fit=crop",
+    description: "Luxury property portal with virtual tours and lead management."
   },
   {
-    title: "ClickFlow Ads",
-    category: "PPC Advertising",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=600&auto=format&fit=crop",
-    description: "Reduced CPA by 40% while doubling conversion volume."
+    title: "Champion Gym",
+    category: "Fitness",
+    image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=800&auto=format&fit=crop",
+    description: "Dynamic fitness membership site with class scheduling integration."
   },
   {
-    title: "ViralStream",
-    category: "Social Media",
-    image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=600&auto=format&fit=crop",
-    description: "Cross-platform campaign reaching 5M+ organic impressions."
+    title: "Elite Graphix",
+    category: "Creative Agency",
+    image: "https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=800&auto=format&fit=crop",
+    description: "Portfolio showcase for a premier creative design and branding agency."
   },
   {
-    title: "CodeCraft SaaS",
-    category: "Web Development",
-    image: "https://images.unsplash.com/photo-1555099962-4199c345e5dd?q=80&w=600&auto=format&fit=crop",
-    description: "Full-stack React application with real-time data analytics."
+    title: "Fashion Store",
+    category: "Shopify",
+    image: "https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=800&auto=format&fit=crop",
+    description: "Modern fashion e-commerce store built on Shopify."
   },
   {
-    title: "StoryBrand Blog",
-    category: "Content Strategy",
-    image: "https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=600&auto=format&fit=crop",
-    description: "Content hub implementation increasing retention by 200%."
+    title: "Georgia Green Energy",
+    category: "Sustainable Energy",
+    image: "https://images.unsplash.com/photo-1466611653911-95081537e5b7?q=80&w=800&auto=format&fit=crop",
+    description: "Corporate website for a sustainable energy solutions provider."
   },
   {
-    title: "MarketPulse",
-    category: "Data Analytics",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600&auto=format&fit=crop",
-    description: "Custom dashboarding for enterprise marketing teams."
+    title: "XCross Services",
+    category: "Home Services",
+    image: "https://images.unsplash.com/photo-1584622050111-993a426fbf0a?q=80&w=800&auto=format&fit=crop", // Updated Home Service Image
+    description: "Service booking platform for home maintenance and repairs."
   },
   {
-    title: "MailScale",
-    category: "Email Marketing",
-    image: "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?q=80&w=600&auto=format&fit=crop",
-    description: "Automated drip campaigns generating $50k monthly revenue."
+    title: "Hostma",
+    category: "Web Hosting",
+    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop",
+    description: "Secure and scalable web hosting services provider."
+  },
+  {
+    title: "Trecobox",
+    category: "Streaming",
+    image: "https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?q=80&w=800&auto=format&fit=crop",
+    description: "Movie and TV show streaming entertainment hub."
+  },
+  {
+    title: "Kinza Designer",
+    category: "Digital Portfolio",
+    image: "https://images.unsplash.com/photo-1509395176047-4a66953fd231?q=80&w=800&auto=format&fit=crop",
+    description: "Personal portfolio for a digital designer and marketer."
+  },
+  {
+    title: "Korlexo",
+    category: "eCommerce",
+    image: "https://images.unsplash.com/photo-1510017803434-a899398421b3?q=80&w=800&auto=format&fit=crop",
+    description: "Premium smartwatch and accessories online store."
+  },
+  {
+    title: "L'Odeur Perfumes",
+    category: "Luxury",
+    image: "https://images.unsplash.com/photo-1592914610354-fd354ea45e48?q=80&w=800&auto=format&fit=crop",
+    description: "Elegant e-commerce experience for an exclusive fragrance brand."
+  },
+  {
+    title: "Fast Restaurant",
+    category: "Food & Beverage",
+    image: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=800&auto=format&fit=crop",
+    description: "Online ordering system for a fast-food restaurant chain."
+  },
+  {
+    title: "RM Gadgets",
+    category: "Tech Accessories",
+    image: "https://images.unsplash.com/photo-1550009158-9ebf69173e03?q=80&w=800&auto=format&fit=crop",
+    description: "Gadgets and tech accessories online retail store."
+  },
+  {
+    title: "SK Digital Creator",
+    category: "Digital Agency",
+    image: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?q=80&w=800&auto=format&fit=crop",
+    description: "Digital marketing agency focused on brand growth."
+  },
+  {
+    title: "Smaart Cleaning",
+    category: "Cleaning",
+    image: "https://images.unsplash.com/photo-1585421514738-01798e1e7f3b?q=80&w=800&auto=format&fit=crop", // Updated Cleaning Image
+    description: "Eco-friendly cleaning services for smart buildings."
+  },
+  {
+    title: "Swanley Phone Repair",
+    category: "Repair Services",
+    image: "https://images.unsplash.com/photo-1588508065123-287b28e013da?q=80&w=800&auto=format&fit=crop", // Updated Repair Image
+    description: "Mobile phone and electronics repair service booking."
+  },
+  {
+    title: "Synapse",
+    category: "Marketing",
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=800&auto=format&fit=crop",
+    description: "Strategic marketing agency for digital transformation."
+  },
+  {
+    title: "Velvet Bean",
+    category: "Coffee Shop",
+    image: "https://images.unsplash.com/photo-1497935586351-b67a49e012bf?q=80&w=800&auto=format&fit=crop",
+    description: "Artisan coffee shop website with online menu and reservations."
   }
 ];
 
@@ -89,32 +155,32 @@ const Portfolio: React.FC<PortfolioProps> = ({ isPreview = false, onNavigate }) 
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {displayProjects.map((project, index) => (
-              <RevealOnScroll key={index} delay={index * 0.1}>
+              <RevealOnScroll key={index} delay={index * 0.05}>
                 <div 
-                  className="group relative h-80 overflow-hidden rounded-2xl bg-white/5 border border-white/10 transition-all hover:-translate-y-2 hover:shadow-2xl hover:shadow-purple-500/20"
+                  className="group relative h-72 overflow-hidden rounded-2xl bg-slate-900 border border-white/10 transition-all hover:-translate-y-2 hover:shadow-2xl hover:shadow-purple-500/20"
                 >
                   <div className="absolute inset-0">
                     <img 
                       src={project.image} 
                       alt={project.title} 
-                      loading="lazy"
                       width="600"
                       height="800"
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-40" 
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-100" 
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/50 to-transparent"></div>
+                    {/* Gradient Overlay for Text Readability */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent opacity-90 group-hover:opacity-80 transition-opacity duration-300"></div>
                   </div>
                   
                   <div className="absolute inset-0 p-6 flex flex-col justify-end">
-                    <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                      <span className="text-xs font-medium text-blue-400 uppercase tracking-wider mb-2 block">{project.category}</span>
-                      <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
-                      <p className="text-sm text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                    <div className="transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                      <span className="text-xs font-bold text-blue-400 uppercase tracking-wider mb-2 block">{project.category}</span>
+                      <h3 className="text-xl font-bold text-white mb-2 leading-tight">{project.title}</h3>
+                      <p className="text-sm text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-75 line-clamp-2">
                         {project.description}
                       </p>
                     </div>
                     
-                    <div className="absolute top-4 right-4 bg-white/10 p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-white/20">
+                    <div className="absolute top-4 right-4 bg-black/50 backdrop-blur-md p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-black/70 border border-white/10">
                       <ArrowUpRight className="w-4 h-4 text-white" />
                     </div>
                   </div>

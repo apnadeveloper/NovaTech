@@ -57,7 +57,7 @@ const Hero: React.FC = () => {
 
         <div className="animate-fade-in opacity-0" style={{ animationDelay: '0.6s', animationFillMode: 'forwards' }}>
           <p className="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto">
-            Nova Tech transforms ambitious brands into market leaders through data-driven SEO, creative content, and cutting-edge web development.
+            Apna Developer transforms ambitious brands into market leaders through data-driven SEO, creative content, and cutting-edge web development.
           </p>
         </div>
 

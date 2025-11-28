@@ -1,5 +1,5 @@
 import React, { useState, Suspense, lazy } from 'react';
-import { Github, Twitter, Instagram, Linkedin, Mail, ArrowRight, Loader2 } from 'lucide-react';
+import { Twitter, Instagram, Linkedin, Mail, ArrowRight, Loader2, MapPin, Phone, Facebook } from 'lucide-react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import TeaserChat from './components/TeaserChat';
@@ -16,6 +16,8 @@ const About = lazy(() => import('./components/About'));
 const AboutPreview = lazy(() => import('./components/AboutPreview'));
 const WhyChooseUs = lazy(() => import('./components/WhyChooseUs'));
 const WorkProcess = lazy(() => import('./components/WorkProcess'));
+const PrivacyPolicy = lazy(() => import('./components/PrivacyPolicy'));
+const TermsOfService = lazy(() => import('./components/TermsOfService'));
 
 const PageLoader = () => (
   <div className="min-h-[50vh] flex items-center justify-center">
@@ -50,7 +52,7 @@ const App: React.FC = () => {
                    <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"></div>
                    <h2 className="text-3xl sm:text-5xl font-bold text-white mb-6 relative z-10">Ready to Scale Your Brand?</h2>
                    <p className="text-gray-300 max-w-2xl mx-auto mb-8 relative z-10 text-lg">
-                     Join hundreds of successful businesses who have transformed their digital presence with Nova Tech.
+                     Join hundreds of successful businesses who have transformed their digital presence with Apna Developer.
                    </p>
                    <button 
                      onClick={() => handleNavigate('contact')}
@@ -68,6 +70,8 @@ const App: React.FC = () => {
         {currentPage === 'team' && <div className="pt-20"><Team isPreview={false} onNavigate={handleNavigate} /></div>}
         {currentPage === 'contact' && <Contact />}
         {currentPage === 'about' && <About />}
+        {currentPage === 'privacy' && <PrivacyPolicy />}
+        {currentPage === 'terms' && <TermsOfService />}
       </Suspense>
     );
   };
@@ -82,31 +86,119 @@ const App: React.FC = () => {
         {renderPage()}
       </main>
 
-      <footer className="relative z-10 w-full p-8 border-t border-white/5 bg-slate-950">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="flex flex-col items-center md:items-start gap-1">
-            <span className="font-bold text-lg text-white">Nova Tech</span>
-            <p className="text-sm text-gray-500">Accelerating digital growth.</p>
-          </div>
+      {/* Footer Section */}
+      <footer className="relative z-10 w-full bg-[#1a1c23] border-t border-white/5 pt-16 pb-8 text-gray-300">
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           
-          <div className="text-sm text-gray-600">
-            © {new Date().getFullYear()} Nova Tech Agency. All rights reserved.
+          {/* Column 1: Brand & Socials */}
+          <div className="space-y-6">
+            <div className="flex items-center gap-3">
+               <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shrink-0 relative overflow-hidden shadow-lg shadow-white/10">
+                  <span className="text-blue-600 font-bold text-2xl z-10 relative top-[1px]">A</span>
+                  <div className="absolute w-14 h-4 border border-slate-900 rounded-[100%] rotate-[-45deg] top-4"></div>
+               </div>
+               <div className="flex flex-col">
+                  <span className="text-lg font-bold text-white tracking-widest leading-none">APNA</span>
+                  <span className="text-[10px] font-bold text-white tracking-[0.2em] leading-none mt-1">DEVELOPER</span>
+               </div>
+            </div>
+            <p className="text-sm leading-relaxed text-gray-400">
+              Your trusted partner for comprehensive digital marketing solutions that drive growth and maximize online presence.
+            </p>
+            <div className="flex gap-3">
+              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all duration-300" aria-label="Facebook">
+                <Facebook className="w-5 h-5" />
+              </a>
+              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-sky-500 hover:text-white transition-all duration-300" aria-label="Twitter">
+                <Twitter className="w-5 h-5" />
+              </a>
+              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-pink-600 hover:text-white transition-all duration-300" aria-label="Instagram">
+                <Instagram className="w-5 h-5" />
+              </a>
+            </div>
           </div>
-          
-          <div className="flex items-center gap-6">
-            <a href="#" aria-label="Twitter" className="text-gray-500 hover:text-blue-400 transition-colors">
-              <Twitter className="w-5 h-5" />
-            </a>
-            <a href="#" aria-label="LinkedIn" className="text-gray-500 hover:text-blue-400 transition-colors">
-              <Linkedin className="w-5 h-5" />
-            </a>
-            <a href="#" aria-label="Instagram" className="text-gray-500 hover:text-pink-400 transition-colors">
-              <Instagram className="w-5 h-5" />
-            </a>
-            <a href="mailto:info@apnadeveloper.com" aria-label="Email" className="text-gray-500 hover:text-white transition-colors">
-              <Mail className="w-5 h-5" />
-            </a>
+
+          {/* Column 2: Quick Links */}
+          <div>
+            <h3 className="text-lg font-bold text-white mb-6 uppercase tracking-wide">Quick Links</h3>
+            <ul className="space-y-3 text-sm">
+              {[
+                { label: 'Home', id: 'home' },
+                { label: 'Services', id: 'services' },
+                { label: 'Portfolio', id: 'work' },
+                { label: 'About Us', id: 'about' },
+                { label: 'Contact', id: 'contact' },
+              ].map((item, idx) => (
+                <li key={idx}>
+                   <button 
+                     onClick={() => handleNavigate(item.id)}
+                     className="hover:text-white hover:translate-x-1 transition-all duration-300 flex items-center gap-2 group"
+                   >
+                     <span className="text-gray-600 group-hover:text-blue-400 transition-colors">→</span> {item.label}
+                   </button>
+                </li>
+              ))}
+            </ul>
           </div>
+
+          {/* Column 3: Our Services */}
+          <div>
+            <h3 className="text-lg font-bold text-white mb-6 uppercase tracking-wide">Our Services</h3>
+            <ul className="space-y-3 text-sm">
+              {[
+                'Website Designing',
+                'Website Development',
+                'eCommerce Development',
+                'Search Engine Optimization',
+                'WordPress Development',
+                'Graphics Designing',
+                'Social Media Marketing'
+              ].map((service, idx) => (
+                 <li key={idx}>
+                   <button 
+                     onClick={() => handleNavigate('services')}
+                     className="hover:text-white hover:translate-x-1 transition-all duration-300 flex items-center gap-2 group text-left"
+                   >
+                     <span className="text-gray-600 group-hover:text-blue-400 transition-colors">→</span> {service}
+                   </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 4: Contact Info */}
+          <div>
+            <h3 className="text-lg font-bold text-white mb-6 uppercase tracking-wide">Contact Info</h3>
+            <div className="space-y-5 text-sm">
+              <div className="flex items-start gap-3 group">
+                 <MapPin className="w-5 h-5 text-white mt-0.5 shrink-0 group-hover:text-blue-400 transition-colors" />
+                 <span className="text-gray-300 group-hover:text-white transition-colors">Dar-ul-Ehsan Town - Okara, PAKISTAN</span>
+              </div>
+              <div className="flex items-center gap-3 group">
+                 <Phone className="w-5 h-5 text-white shrink-0 group-hover:text-green-500 transition-colors" />
+                 <a href="https://wa.me/923436059243" className="text-gray-300 group-hover:text-white transition-colors">WhatsApp: +92 343 605 9243</a>
+              </div>
+              <div className="flex items-center gap-3 group">
+                 <Phone className="w-5 h-5 text-white shrink-0 group-hover:text-green-500 transition-colors" />
+                 <a href="https://wa.me/447848893414" className="text-gray-300 group-hover:text-white transition-colors">WhatsApp: +44 7848 893 414</a>
+              </div>
+              <div className="flex items-center gap-3 group">
+                 <Mail className="w-5 h-5 text-white shrink-0 group-hover:text-blue-400 transition-colors" />
+                 <a href="mailto:info@apnadeveloper.com" className="text-gray-300 group-hover:text-white transition-colors">info@apnadeveloper.com</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div className="max-w-7xl mx-auto px-6 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+           <div className="text-sm text-gray-500">
+             &copy; {new Date().getFullYear()} Apna Developer. All rights reserved.
+           </div>
+           <div className="flex gap-6 text-sm text-gray-500">
+             <button onClick={() => handleNavigate('privacy')} className="hover:text-white transition-colors">Privacy Policy</button>
+             <button onClick={() => handleNavigate('terms')} className="hover:text-white transition-colors">Terms of Service</button>
+           </div>
         </div>
       </footer>
 

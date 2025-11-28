@@ -36,10 +36,10 @@ const WhyChooseUs: React.FC = () => {
             <div className="space-y-8">
               <div>
                 <h2 className="text-3xl sm:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400 mb-6">
-                  Why Nova Tech?
+                  Why Apna Developer?
                 </h2>
                 <p className="text-gray-300 text-lg leading-relaxed">
-                  We don't just follow trends; we set them. At Nova Tech, we fuse creative brilliance with engineering precision to build digital ecosystems that scale. Our proprietary SEO algorithms and performance marketing frameworks ensure your brand doesn't just compete—it dominates.
+                  We don't just follow trends; we set them. At Apna Developer, we fuse creative brilliance with engineering precision to build digital ecosystems that scale. Our proprietary SEO algorithms and performance marketing frameworks ensure your brand doesn't just compete—it dominates.
                 </p>
               </div>
 

@@ -14,7 +14,7 @@ const AboutPreview: React.FC<AboutPreviewProps> = ({ onNavigate }) => {
           <span className="text-blue-500 font-semibold tracking-wider uppercase text-sm">Who We Are</span>
           <h2 className="text-3xl sm:text-5xl font-bold text-white mt-3 mb-6">Architects of the Digital Future</h2>
           <p className="text-gray-400 max-w-3xl mx-auto text-lg mb-10 leading-relaxed">
-            Nova Tech isn't just an agency; we are your strategic growth partner. Born from a passion for technology and design, we help businesses navigate the complexities of the modern web. From startups to Fortune 500s, we deliver tailored solutions that drive real impact.
+            Apna Developer isn't just an agency; we are your strategic growth partner. Born from a passion for technology and design, we help businesses navigate the complexities of the modern web. From startups to Fortune 500s, we deliver tailored solutions that drive real impact.
           </p>
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12 border-y border-white/10 py-10">
