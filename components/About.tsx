@@ -83,12 +83,12 @@ const About: React.FC = () => {
                        <div className="text-sm text-gray-500 uppercase tracking-widest">Clients Served</div>
                    </div>
                    <div>
-                       <div className="text-4xl font-bold text-white mb-2">10k+</div>
+                       <div className="text-4xl font-bold text-white mb-2">1k+</div>
                        <div className="text-sm text-gray-500 uppercase tracking-widest">Keywords Ranked</div>
                    </div>
                    <div>
-                       <div className="text-4xl font-bold text-white mb-2">$50M</div>
-                       <div className="text-sm text-gray-500 uppercase tracking-widest">Client Revenue</div>
+                       <div className="text-4xl font-bold text-white mb-2">1k</div>
+                       <div className="text-sm text-gray-500 uppercase tracking-widest">Satisfied Clients</div>
                    </div>
                    <div>
                        <div className="text-4xl font-bold text-white mb-2">15</div>
