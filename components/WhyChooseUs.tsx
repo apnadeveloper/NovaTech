@@ -62,12 +62,7 @@ const WhyChooseUs: React.FC = () => {
                 ))}
               </div>
 
-              <div className="pt-4">
-                <button className="flex items-center gap-2 text-white border-b border-white/20 pb-1 hover:border-blue-400 hover:text-blue-400 transition-all">
-                  <Shield className="w-4 h-4" />
-                  <span>Enterprise Grade Security & Scalability</span>
-                </button>
-              </div>
+              
             </div>
           </RevealOnScroll>
 
