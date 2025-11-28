@@ -12,115 +12,115 @@ const projects = [
   {
     title: "A1 VPS Hosting",
     category: "Web Hosting",
-    image: "https://images.unsplash.com/photo-1601597111158-2fceff292cdc?q=60&w=500&auto=format&fit=crop", 
+    image: "https://images.unsplash.com/photo-1601597111158-2fceff292cdc?q=50&w=400&fm=webp&fit=crop", 
     description: "High-performance VPS hosting platform with automated provisioning."
   },
   {
     title: "Aspect Zone Properties",
     category: "Real Estate",
-    image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=60&w=500&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=50&w=400&fm=webp&fit=crop",
     description: "Luxury property portal with virtual tours and lead management."
   },
   {
     title: "Champion Gym",
     category: "Fitness",
-    image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=60&w=500&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=50&w=400&fm=webp&fit=crop",
     description: "Dynamic fitness membership site with class scheduling integration."
   },
   {
     title: "Elite Graphix",
     category: "Creative Agency",
-    image: "https://images.unsplash.com/photo-1600607686527-6fb886090705?q=60&w=500&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1600607686527-6fb886090705?q=50&w=400&fm=webp&fit=crop",
     description: "Portfolio showcase for a premier creative design and branding agency."
   },
   {
     title: "Fashion Store",
     category: "Shopify",
-    image: "https://images.unsplash.com/photo-1483985988355-763728e1935b?q=60&w=500&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1483985988355-763728e1935b?q=50&w=400&fm=webp&fit=crop",
     description: "Modern fashion e-commerce store built on Shopify."
   },
   {
     title: "Georgia Green Energy",
     category: "Sustainable Energy",
-    image: "https://images.unsplash.com/photo-1466611653911-95081537e5b7?q=60&w=500&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1466611653911-95081537e5b7?q=50&w=400&fm=webp&fit=crop",
     description: "Corporate website for a sustainable energy solutions provider."
   },
   {
     title: "XCross Services",
     category: "Home Services",
-    image: "https://images.unsplash.com/photo-1584622050111-993a426fbf0a?q=60&w=500&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1584622050111-993a426fbf0a?q=50&w=400&fm=webp&fit=crop",
     description: "Service booking platform for home maintenance and repairs."
   },
   {
     title: "Hostma",
     category: "Web Hosting",
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=60&w=500&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=50&w=400&fm=webp&fit=crop",
     description: "Secure and scalable web hosting services provider."
   },
   {
     title: "Trecobox",
     category: "Streaming",
-    image: "https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?q=60&w=500&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?q=50&w=400&fm=webp&fit=crop",
     description: "Movie and TV show streaming entertainment hub."
   },
   {
     title: "Kinza Designer",
     category: "Digital Portfolio",
-    image: "https://images.unsplash.com/photo-1509395176047-4a66953fd231?q=60&w=500&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1509395176047-4a66953fd231?q=50&w=400&fm=webp&fit=crop",
     description: "Personal portfolio for a digital designer and marketer."
   },
   {
     title: "Korlexo",
     category: "eCommerce",
-    image: "https://images.unsplash.com/photo-1510017803434-a899398421b3?q=60&w=500&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1510017803434-a899398421b3?q=50&w=400&fm=webp&fit=crop",
     description: "Premium smartwatch and accessories online store."
   },
   {
     title: "L'Odeur Perfumes",
     category: "Luxury",
-    image: "https://images.unsplash.com/photo-1592914610354-fd354ea45e48?q=60&w=500&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1592914610354-fd354ea45e48?q=50&w=400&fm=webp&fit=crop",
     description: "Elegant e-commerce experience for an exclusive fragrance brand."
   },
   {
     title: "Fast Restaurant",
     category: "Food & Beverage",
-    image: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=60&w=500&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=50&w=400&fm=webp&fit=crop",
     description: "Online ordering system for a fast-food restaurant chain."
   },
   {
     title: "RM Gadgets",
     category: "Tech Accessories",
-    image: "https://images.unsplash.com/photo-1550009158-9ebf69173e03?q=60&w=500&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1550009158-9ebf69173e03?q=50&w=400&fm=webp&fit=crop",
     description: "Gadgets and tech accessories online retail store."
   },
   {
     title: "SK Digital Creator",
     category: "Digital Agency",
-    image: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?q=60&w=500&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?q=50&w=400&fm=webp&fit=crop",
     description: "Digital marketing agency focused on brand growth."
   },
   {
     title: "Smaart Cleaning",
     category: "Cleaning",
-    image: "https://images.unsplash.com/photo-1585421514738-01798e1e7f3b?q=60&w=500&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1585421514738-01798e1e7f3b?q=50&w=400&fm=webp&fit=crop",
     description: "Eco-friendly cleaning services for smart buildings."
   },
   {
     title: "Swanley Phone Repair",
     category: "Repair Services",
-    image: "https://images.unsplash.com/photo-1588508065123-287b28e013da?q=60&w=500&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1588508065123-287b28e013da?q=50&w=400&fm=webp&fit=crop",
     description: "Mobile phone and electronics repair service booking."
   },
   {
     title: "Synapse",
     category: "Marketing",
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=60&w=500&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=50&w=400&fm=webp&fit=crop",
     description: "Strategic marketing agency for digital transformation."
   },
   {
     title: "Velvet Bean",
     category: "Coffee Shop",
-    image: "https://images.unsplash.com/photo-1497935586351-b67a49e012bf?q=60&w=500&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1497935586351-b67a49e012bf?q=50&w=400&fm=webp&fit=crop",
     description: "Artisan coffee shop website with online menu and reservations."
   }
 ];
@@ -170,8 +170,8 @@ const Portfolio: React.FC<PortfolioProps> = ({ isPreview = false, onNavigate }) 
                     <img 
                       src={project.image} 
                       alt={project.title} 
-                      width="500"
-                      height="800"
+                      width="400"
+                      height="640"
                       loading="lazy"
                       decoding="async"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-100" 

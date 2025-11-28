@@ -208,7 +208,7 @@ const App: React.FC = () => {
         </div>
 
         <div className="max-w-7xl mx-auto px-6 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-center items-center gap-4">
-           <div className="text-sm text-gray-500">
+           <div className="text-sm text-white">
              &copy; {new Date().getFullYear()} Apna Developer. All rights reserved.
            </div>
         </div>

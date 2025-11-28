@@ -13,25 +13,25 @@ const team = [
     name: "Alex Carter",
     role: "Founder & CEO",
     bio: "Visionary leader with 10+ years in digital strategy. Formerly led growth at major tech startups.",
-    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=60&w=400&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=50&w=250&fm=webp&fit=crop"
   },
   {
     name: "Sofia Davis",
     role: "Creative Director",
     bio: "Award-winning designer obsessed with UX/UI. Brings a blend of art and functionality to every project.",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=60&w=400&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=50&w=250&fm=webp&fit=crop"
   },
   {
     name: "James Wilson",
     role: "Head of SEO",
     bio: "Data analyst turned growth hacker. Master of technical SEO and algorithmic patterns.",
-    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=60&w=400&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=50&w=250&fm=webp&fit=crop"
   },
   {
     name: "Maya Patel",
     role: "Lead Developer",
     bio: "Full-stack wizard specializing in React & Node. Ensures our solutions are as robust as they are beautiful.",
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=60&w=400&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=50&w=250&fm=webp&fit=crop"
   }
 ];
 

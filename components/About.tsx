@@ -29,7 +29,7 @@ const About: React.FC = () => {
           <RevealOnScroll delay={0.2}>
             <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
               <img 
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=60&w=600&auto=format&fit=crop" 
+                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=50&w=500&fm=webp&fit=crop" 
                 alt="Team working together" 
                 loading="lazy"
                 decoding="async"

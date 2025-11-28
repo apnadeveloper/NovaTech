@@ -7,19 +7,19 @@ const testimonials = [
     quote: "Apna Developer didn't just rebuild our website; they completely revitalized our brand. Our leads have doubled since the launch.",
     author: "Sarah Jenkins",
     role: "CMO, FinTech Solutions",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=60&w=150&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=50&w=100&fm=webp&fit=crop"
   },
   {
     quote: "The ROI on our PPC campaigns has been incredible. Their team is data-driven, transparent, and proactive.",
     author: "Michael Chang",
     role: "Founder, Urban Gear",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=60&w=150&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=50&w=100&fm=webp&fit=crop"
   },
   {
     quote: "Finally, an agency that understands both design and technical SEO. We rank #1 for our main keywords now.",
     author: "Elena Rodriguez",
     role: "Marketing Director, LuxHomes",
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=60&w=150&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=50&w=100&fm=webp&fit=crop"
   }
 ];
 
