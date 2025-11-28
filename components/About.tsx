@@ -1,7 +1,6 @@
 import React from 'react';
 import { Calendar, Globe2 } from 'lucide-react';
 import RevealOnScroll from './RevealOnScroll';
-import Team from './Team';
 import SEO from './SEO';
 
 const About: React.FC = () => {
@@ -175,8 +174,6 @@ const About: React.FC = () => {
               </div>
            </RevealOnScroll>
         </section>
-
-        <Team />
       </div>
     </div>
   );

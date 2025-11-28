@@ -15,7 +15,6 @@ const BackToTop = lazy(() => import('./components/BackToTop'));
 // Lazy load pages
 const Services = lazy(() => import('./components/Services'));
 const Portfolio = lazy(() => import('./components/Portfolio'));
-const Team = lazy(() => import('./components/Team'));
 const Contact = lazy(() => import('./components/Contact'));
 const About = lazy(() => import('./components/About'));
 const AboutPreview = lazy(() => import('./components/AboutPreview'));
@@ -51,7 +50,6 @@ const App: React.FC = () => {
             <Services isPreview={true} onNavigate={handleNavigate} />
             <Portfolio isPreview={true} onNavigate={handleNavigate} />
             <AboutPreview onNavigate={handleNavigate} />
-            <Team isPreview={true} onNavigate={handleNavigate} />
             
             <section className="py-24 px-6 relative z-10">
               <RevealOnScroll>
@@ -74,7 +72,6 @@ const App: React.FC = () => {
         )}
         {currentPage === 'services' && <Services isPreview={false} onNavigate={handleNavigate} />}
         {currentPage === 'work' && <Portfolio isPreview={false} onNavigate={handleNavigate} />}
-        {currentPage === 'team' && <div className="pt-20"><Team isPreview={false} onNavigate={handleNavigate} /></div>}
         {currentPage === 'contact' && <Contact />}
         {currentPage === 'about' && <About />}
       </Suspense>
