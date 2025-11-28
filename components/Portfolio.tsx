@@ -1,5 +1,5 @@
-import React from 'react';
-import { ExternalLink, ArrowUpRight, ArrowRight, Layers, Eye, Zap } from 'lucide-react';
+import React, { useState } from 'react';
+import { ExternalLink, ArrowUpRight, ArrowRight, Layers, Eye, Zap, X } from 'lucide-react';
 import RevealOnScroll from './RevealOnScroll';
 import SEO from './SEO';
 
@@ -8,124 +8,172 @@ interface PortfolioProps {
   onNavigate?: (page: string) => void;
 }
 
-const projects = [
+interface ProjectItem {
+  title: string;
+  category: string;
+  image: string;
+  description: string;
+  fullDescription: string;
+  link: string;
+}
+
+const projects: ProjectItem[] = [
   {
     title: "A1 VPS Hosting",
     category: "Web Hosting",
     image: "https://images.unsplash.com/photo-1601597111158-2fceff292cdc?q=50&w=400&fm=webp&fit=crop", 
-    description: "High-performance VPS hosting platform with automated provisioning."
+    description: "High-performance VPS hosting platform with automated provisioning.",
+    fullDescription: "A comprehensive VPS hosting solution designed for speed and reliability. Features include automated instance provisioning, real-time resource monitoring, and a custom control panel for easy management. Built with high-availability architecture to ensure 99.9% uptime.",
+    link: "#"
   },
   {
     title: "Aspect Zone Properties",
     category: "Real Estate",
     image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=50&w=400&fm=webp&fit=crop",
-    description: "Luxury property portal with virtual tours and lead management."
+    description: "Luxury property portal with virtual tours and lead management.",
+    fullDescription: "A premium real estate portal connecting buyers with luxury properties. The platform features 360-degree virtual tours, advanced search filtering, and a robust CRM backend for agents to manage leads and listings efficiently.",
+    link: "#"
   },
   {
     title: "Champion Gym",
     category: "Fitness",
     image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=50&w=400&fm=webp&fit=crop",
-    description: "Dynamic fitness membership site with class scheduling integration."
+    description: "Dynamic fitness membership site with class scheduling integration.",
+    fullDescription: "An energetic website for a modern gym franchise. It includes member portals, class booking systems integrated with calendars, trainer profiles, and an e-commerce section for merchandise.",
+    link: "#"
   },
   {
     title: "Elite Graphix",
     category: "Creative Agency",
     image: "https://images.unsplash.com/photo-1600607686527-6fb886090705?q=50&w=400&fm=webp&fit=crop",
-    description: "Portfolio showcase for a premier creative design and branding agency."
+    description: "Portfolio showcase for a premier creative design and branding agency.",
+    fullDescription: "A visually immersive portfolio site for a creative agency. It utilizes heavy animations and high-resolution imagery to showcase branding projects, with a focus on storytelling and visual impact.",
+    link: "#"
   },
   {
     title: "Fashion Store",
     category: "Shopify",
     image: "https://images.unsplash.com/photo-1483985988355-763728e1935b?q=50&w=400&fm=webp&fit=crop",
-    description: "Modern fashion e-commerce store built on Shopify."
+    description: "Modern fashion e-commerce store built on Shopify.",
+    fullDescription: "A chic and modern Shopify store optimized for fashion retail. Features include advanced product filtering, lookbook integrations, sizing guides, and a streamlined mobile-first checkout process.",
+    link: "#"
   },
   {
     title: "Georgia Green Energy",
     category: "Sustainable Energy",
     image: "https://images.unsplash.com/photo-1466611653911-95081537e5b7?q=50&w=400&fm=webp&fit=crop",
-    description: "Corporate website for a sustainable energy solutions provider."
+    description: "Corporate website for a sustainable energy solutions provider.",
+    fullDescription: "A professional corporate presence for a renewable energy company. The site highlights sustainability impact reports, service details, and includes a calculator for potential energy savings.",
+    link: "#"
   },
   {
     title: "XCross Services",
     category: "Home Services",
     image: "https://images.unsplash.com/photo-1584622050111-993a426fbf0a?q=50&w=400&fm=webp&fit=crop",
-    description: "Service booking platform for home maintenance and repairs."
+    description: "Service booking platform for home maintenance and repairs.",
+    fullDescription: "An on-demand service booking platform connecting homeowners with trusted professionals. Features real-time availability, secure payments, and a review system for service providers.",
+    link: "#"
   },
   {
     title: "Hostma",
     category: "Web Hosting",
     image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=50&w=400&fm=webp&fit=crop",
-    description: "Secure and scalable web hosting services provider."
+    description: "Secure and scalable web hosting services provider.",
+    fullDescription: "A sleek interface for a web hosting company offering shared, VPS, and dedicated hosting. The site focuses on clear pricing tables, feature comparisons, and a seamless onboarding flow.",
+    link: "#"
   },
   {
     title: "Trecobox",
     category: "Streaming",
     image: "https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?q=50&w=400&fm=webp&fit=crop",
-    description: "Movie and TV show streaming entertainment hub."
+    description: "Movie and TV show streaming entertainment hub.",
+    fullDescription: "A content-rich entertainment hub for streaming movies and TV shows. The UI mimics top-tier streaming platforms with dark mode aesthetics, personalized recommendations, and smooth playback interfaces.",
+    link: "#"
   },
   {
     title: "Kinza Designer",
     category: "Digital Portfolio",
     image: "https://images.unsplash.com/photo-1509395176047-4a66953fd231?q=50&w=400&fm=webp&fit=crop",
-    description: "Personal portfolio for a digital designer and marketer."
+    description: "Personal portfolio for a digital designer and marketer.",
+    fullDescription: "A minimalist yet bold portfolio for a freelance designer. It showcases project case studies, skill sets, and includes a blog section for design thought leadership.",
+    link: "#"
   },
   {
     title: "Korlexo",
     category: "eCommerce",
     image: "https://images.unsplash.com/photo-1510017803434-a899398421b3?q=50&w=400&fm=webp&fit=crop",
-    description: "Premium smartwatch and accessories online store."
+    description: "Premium smartwatch and accessories online store.",
+    fullDescription: "An e-commerce destination for tech wearables. The site emphasizes product features with high-quality close-ups, comparison tools, and customer reviews to drive conversions.",
+    link: "#"
   },
   {
     title: "L'Odeur Perfumes",
     category: "Luxury",
     image: "https://images.unsplash.com/photo-1592914610354-fd354ea45e48?q=50&w=400&fm=webp&fit=crop",
-    description: "Elegant e-commerce experience for an exclusive fragrance brand."
+    description: "Elegant e-commerce experience for an exclusive fragrance brand.",
+    fullDescription: "A luxury e-commerce experience designed to evoke the senses. It features sophisticated typography, atmospheric photography, and a scent profile guide to help customers choose their perfect fragrance.",
+    link: "#"
   },
   {
     title: "Fast Restaurant",
     category: "Food & Beverage",
     image: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=50&w=400&fm=webp&fit=crop",
-    description: "Online ordering system for a fast-food restaurant chain."
+    description: "Online ordering system for a fast-food restaurant chain.",
+    fullDescription: "A vibrant and appetizing online ordering platform. It supports complex menu customizations, location-based delivery tracking, and loyalty program integration.",
+    link: "#"
   },
   {
     title: "RM Gadgets",
     category: "Tech Accessories",
     image: "https://images.unsplash.com/photo-1550009158-9ebf69173e03?q=50&w=400&fm=webp&fit=crop",
-    description: "Gadgets and tech accessories online retail store."
+    description: "Gadgets and tech accessories online retail store.",
+    fullDescription: "A tech-focused retail store with a clean, grid-based layout. It features 'Deal of the Day' countdowns, bundled product offers, and a robust search with instant suggestions.",
+    link: "#"
   },
   {
     title: "SK Digital Creator",
     category: "Digital Agency",
     image: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?q=50&w=400&fm=webp&fit=crop",
-    description: "Digital marketing agency focused on brand growth."
+    description: "Digital marketing agency focused on brand growth.",
+    fullDescription: "A corporate website for a digital marketing agency. It outlines services, presents case studies with data visualizations, and offers lead magnets to capture potential client information.",
+    link: "#"
   },
   {
     title: "Smaart Cleaning",
     category: "Cleaning",
     image: "https://images.unsplash.com/photo-1585421514738-01798e1e7f3b?q=50&w=400&fm=webp&fit=crop",
-    description: "Eco-friendly cleaning services for smart buildings."
+    description: "Eco-friendly cleaning services for smart buildings.",
+    fullDescription: "A clean and fresh website for a professional cleaning service. It includes an instant quote calculator, before/after galleries, and easy booking forms for residential and commercial clients.",
+    link: "#"
   },
   {
     title: "Swanley Phone Repair",
     category: "Repair Services",
     image: "https://images.unsplash.com/photo-1588508065123-287b28e013da?q=50&w=400&fm=webp&fit=crop",
-    description: "Mobile phone and electronics repair service booking."
+    description: "Mobile phone and electronics repair service booking.",
+    fullDescription: "A local business website focused on trust and speed. It allows customers to book repair slots, check estimated repair costs, and track the status of their device repair.",
+    link: "#"
   },
   {
     title: "Synapse",
     category: "Marketing",
     image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=50&w=400&fm=webp&fit=crop",
-    description: "Strategic marketing agency for digital transformation."
+    description: "Strategic marketing agency for digital transformation.",
+    fullDescription: "A forward-thinking agency site using abstract 3D elements to represent innovation. It communicates complex marketing strategies through simple, interactive diagrams.",
+    link: "#"
   },
   {
     title: "Velvet Bean",
     category: "Coffee Shop",
     image: "https://images.unsplash.com/photo-1497935586351-b67a49e012bf?q=50&w=400&fm=webp&fit=crop",
-    description: "Artisan coffee shop website with online menu and reservations."
+    description: "Artisan coffee shop website with online menu and reservations.",
+    fullDescription: "A cozy and inviting website for a specialty coffee shop. It features a digital menu, table reservation system, and an online shop for coffee beans and brewing equipment.",
+    link: "#"
   }
 ];
 
 const Portfolio: React.FC<PortfolioProps> = ({ isPreview = false, onNavigate }) => {
+  const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
   const displayProjects = isPreview ? projects.slice(0, 4) : projects;
 
   return (
@@ -164,7 +212,8 @@ const Portfolio: React.FC<PortfolioProps> = ({ isPreview = false, onNavigate }) 
             {displayProjects.map((project, index) => (
               <RevealOnScroll key={index} delay={index * 0.05}>
                 <div 
-                  className="group relative h-72 overflow-hidden rounded-2xl bg-slate-900 border border-white/10 transition-all hover:-translate-y-2 hover:shadow-2xl hover:shadow-purple-500/20"
+                  onClick={() => setSelectedProject(project)}
+                  className="group relative h-72 overflow-hidden rounded-2xl bg-slate-900 border border-white/10 transition-all hover:-translate-y-2 hover:shadow-2xl hover:shadow-purple-500/20 cursor-pointer"
                 >
                   <div className="absolute inset-0">
                     <img 
@@ -276,6 +325,62 @@ const Portfolio: React.FC<PortfolioProps> = ({ isPreview = false, onNavigate }) 
             </RevealOnScroll>
           </section>
         </>
+      )}
+
+      {/* Project Detail Modal */}
+      {selectedProject && (
+        <div 
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-fade-in" 
+          onClick={() => setSelectedProject(null)}
+        >
+          <div 
+            className="relative w-full max-w-5xl bg-slate-950 border border-white/10 rounded-2xl overflow-hidden shadow-2xl flex flex-col md:flex-row max-h-[90vh]" 
+            onClick={e => e.stopPropagation()}
+          >
+            <button 
+              onClick={() => setSelectedProject(null)}
+              className="absolute top-4 right-4 z-20 p-2 bg-black/50 hover:bg-white text-white hover:text-black rounded-full transition-colors backdrop-blur-md"
+              aria-label="Close modal"
+            >
+              <X className="w-5 h-5" />
+            </button>
+            
+            {/* Image Section */}
+            <div className="w-full md:w-1/2 h-64 md:h-auto relative shrink-0">
+               <img 
+                 src={selectedProject.image} 
+                 alt={selectedProject.title} 
+                 className="w-full h-full object-cover" 
+               />
+               <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent md:hidden"></div>
+            </div>
+            
+            {/* Content Section */}
+            <div className="w-full md:w-1/2 p-8 md:p-12 flex flex-col overflow-y-auto">
+              <span className="text-blue-400 font-bold uppercase tracking-wider text-xs mb-3 flex items-center gap-2">
+                <Layers className="w-4 h-4" />
+                {selectedProject.category}
+              </span>
+              <h3 className="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">{selectedProject.title}</h3>
+              
+              <div className="prose prose-invert prose-sm text-gray-300 leading-relaxed mb-8 grow">
+                <p className="text-lg mb-4 text-white/90">{selectedProject.description}</p>
+                <p>{selectedProject.fullDescription}</p>
+              </div>
+              
+              <div className="mt-auto pt-6 border-t border-white/10">
+                <a 
+                  href={selectedProject.link} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-white text-black px-8 py-3.5 rounded-full font-bold hover:bg-gray-200 transition-colors w-full md:w-auto justify-center"
+                >
+                  Visit Live Site <ExternalLink className="w-4 h-4" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
       )}
     </div>
   );
