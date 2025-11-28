@@ -1,6 +1,7 @@
 import React from 'react';
 import { Linkedin, Twitter, Mail, ArrowRight, Heart, Users, Coffee } from 'lucide-react';
 import RevealOnScroll from './RevealOnScroll';
+import SEO from './SEO';
 
 interface TeamProps {
   isPreview?: boolean;
@@ -12,31 +13,37 @@ const team = [
     name: "Alex Carter",
     role: "Founder & CEO",
     bio: "Visionary leader with 10+ years in digital strategy. Formerly led growth at major tech startups.",
-    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=400&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=60&w=400&auto=format&fit=crop"
   },
   {
     name: "Sofia Davis",
     role: "Creative Director",
     bio: "Award-winning designer obsessed with UX/UI. Brings a blend of art and functionality to every project.",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=400&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=60&w=400&auto=format&fit=crop"
   },
   {
     name: "James Wilson",
     role: "Head of SEO",
     bio: "Data analyst turned growth hacker. Master of technical SEO and algorithmic patterns.",
-    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=400&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=60&w=400&auto=format&fit=crop"
   },
   {
     name: "Maya Patel",
     role: "Lead Developer",
     bio: "Full-stack wizard specializing in React & Node. Ensures our solutions are as robust as they are beautiful.",
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=400&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=60&w=400&auto=format&fit=crop"
   }
 ];
 
 const Team: React.FC<TeamProps> = ({ isPreview = false, onNavigate }) => {
   return (
     <div className={isPreview ? "" : "bg-slate-950"}>
+      {!isPreview && (
+        <SEO 
+          title="Our Team | Meet the Experts - Apna Developer"
+          description="Meet the visionary strategists, creative designers, and expert developers behind Apna Developer's success."
+        />
+      )}
       <section id="team" className={`py-24 px-6 relative z-10 ${isPreview ? '' : 'pt-32'}`}>
         <div className="max-w-7xl mx-auto">
           <RevealOnScroll>
@@ -60,6 +67,7 @@ const Team: React.FC<TeamProps> = ({ isPreview = false, onNavigate }) => {
                       src={member.image} 
                       alt={member.name} 
                       loading="lazy"
+                      decoding="async"
                       width="200"
                       height="200"
                       className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-500 transform group-hover:scale-110" 

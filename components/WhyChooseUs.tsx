@@ -13,11 +13,12 @@ const WhyChooseUs: React.FC = () => {
               <div className="absolute -inset-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl blur-lg opacity-30 group-hover:opacity-50 transition duration-500"></div>
               <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
                 <img 
-                  src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=800&auto=format&fit=crop" 
+                  src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=60&w=600&auto=format&fit=crop" 
                   alt="Team analyzing data on screens" 
                   loading="lazy"
-                  width="800"
-                  height="600"
+                  decoding="async"
+                  width="600"
+                  height="450"
                   className="w-full h-full object-cover transform group-hover:scale-105 transition duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>

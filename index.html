@@ -5,10 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Apna Developer offers Website Design, Development, eCommerce, Shopify, WordPress, SEO, Digital Marketing, Graphic Design, Video Editing, and Python Script Development." />
     <title>Apna Developer | Digital Marketing Agency</title>
+    
+    <!-- Preconnect to critical origins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://images.unsplash.com">
+    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+    
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Preload Font to reduce CLS and LCP delay -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    </noscript>
+
     <script>
       tailwind.config = {
         theme: {
@@ -61,6 +73,7 @@
         background-color: #020617; /* slate-950 */
         color: white;
         overflow-x: hidden;
+        font-family: 'Inter', sans-serif; /* Fallback until Inter loads */
       }
       /* Custom Scrollbar */
       ::-webkit-scrollbar {

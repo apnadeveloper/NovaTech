@@ -2,10 +2,15 @@ import React from 'react';
 import { Calendar, Globe2 } from 'lucide-react';
 import RevealOnScroll from './RevealOnScroll';
 import Team from './Team';
+import SEO from './SEO';
 
 const About: React.FC = () => {
   return (
     <div className="bg-slate-950">
+      <SEO 
+        title="About Us | Our Story & Mission - Apna Developer"
+        description="Learn about Apna Developer's mission to democratize enterprise-grade digital strategies for businesses worldwide."
+      />
       <div className="pt-32 pb-12 px-6">
         <div className="max-w-4xl mx-auto text-center mb-16">
           <RevealOnScroll>
@@ -24,11 +29,12 @@ const About: React.FC = () => {
           <RevealOnScroll delay={0.2}>
             <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
               <img 
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop" 
+                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=60&w=600&auto=format&fit=crop" 
                 alt="Team working together" 
                 loading="lazy"
-                width="800"
-                height="600"
+                decoding="async"
+                width="600"
+                height="450"
                 className="w-full h-full object-cover opacity-80 hover:scale-105 transition duration-700"
               />
             </div>

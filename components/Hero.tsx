@@ -18,7 +18,7 @@ const RevealText: React.FC<RevealTextProps> = ({ text, delay = 0, className = ""
               key={j}
               className="animate-reveal inline-block"
               style={{
-                animationDelay: `${delay + i * 0.1 + j * 0.03}s`,
+                animationDelay: `${delay + i * 0.05 + j * 0.02}s`, // Faster animation for LCP
               }}
             >
               {char}
@@ -48,20 +48,20 @@ const Hero: React.FC = () => {
         <div className="flex flex-col items-center justify-center gap-2">
            <h1 className="sr-only">Digital Excellence Redefined.</h1>
            <div className="text-5xl sm:text-7xl md:text-8xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-b from-white via-white to-slate-400 pb-2">
-             <RevealText text="Digital Excellence" delay={0.1} />
+             <RevealText text="Digital Excellence" delay={0} />
            </div>
            <div className="text-5xl sm:text-7xl md:text-8xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-b from-purple-400 via-purple-300 to-blue-500 pb-2">
-             <RevealText text="Redefined." delay={0.4} />
+             <RevealText text="Redefined." delay={0.2} />
            </div>
         </div>
 
-        <div className="animate-fade-in opacity-0" style={{ animationDelay: '0.6s', animationFillMode: 'forwards' }}>
+        <div className="animate-fade-in opacity-0" style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}>
           <p className="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto">
             Apna Developer transforms ambitious brands into market leaders through data-driven SEO, creative content, and cutting-edge web development.
           </p>
         </div>
 
-        <div className="animate-fade-in opacity-0" style={{ animationDelay: '0.8s', animationFillMode: 'forwards' }}>
+        <div className="animate-fade-in opacity-0" style={{ animationDelay: '0.6s', animationFillMode: 'forwards' }}>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8">
             <button 
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}

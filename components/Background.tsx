@@ -29,9 +29,9 @@ const Background: React.FC = () => {
         <div className="absolute bottom-[40%] left-[5%] w-6 h-6 bg-blue-400/20 rounded-full animate-pulse-slow" style={{ animationDelay: '1s' }}></div>
       </div>
 
-      {/* Floating Particles */}
+      {/* Floating Particles - Reduced count for mobile performance */}
       <div className="absolute inset-0">
-        {[...Array(15)].map((_, i) => (
+        {[...Array(6)].map((_, i) => (
           <div
             key={i}
             className="absolute bg-white rounded-full opacity-10 animate-float will-change-transform"
@@ -45,7 +45,7 @@ const Background: React.FC = () => {
             }}
           />
         ))}
-        {[...Array(8)].map((_, i) => (
+        {[...Array(4)].map((_, i) => (
           <div
             key={`l-${i}`}
             className="absolute bg-blue-400 rounded-full opacity-10 animate-float-delayed will-change-transform"

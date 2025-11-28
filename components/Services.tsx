@@ -5,6 +5,7 @@ import {
   Stethoscope, Landmark, Briefcase, GraduationCap, Building2, Plus, Minus 
 } from 'lucide-react';
 import RevealOnScroll from './RevealOnScroll';
+import SEO from './SEO';
 
 interface ServicesProps {
   isPreview?: boolean;
@@ -112,6 +113,12 @@ const Services: React.FC<ServicesProps> = ({ isPreview = false, onNavigate }) =>
 
   return (
     <div className={isPreview ? "" : "bg-slate-950"}>
+      {!isPreview && (
+        <SEO 
+          title="Our Services | Web Design, SEO, Digital Marketing - Apna Developer"
+          description="Comprehensive digital solutions including Website Development, eCommerce, SEO Optimization, Graphic Design, and Video Editing."
+        />
+      )}
       {/* Main Services Grid */}
       <section id="services" className={`py-24 px-6 relative z-10 ${isPreview ? '' : 'pt-32'}`}>
         <div className="max-w-7xl mx-auto">

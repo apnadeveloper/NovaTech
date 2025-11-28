@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Send, Check, Loader2, AlertCircle, Phone, MapPin, Mail as MailIcon } from 'lucide-react';
 import RevealOnScroll from './RevealOnScroll';
+import SEO from './SEO';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -65,6 +66,10 @@ const Contact: React.FC = () => {
 
   return (
     <section id="contact" className="py-24 px-6 relative z-10 bg-slate-950">
+      <SEO 
+        title="Contact Us | Get a Free Audit - Apna Developer"
+        description="Ready to scale your brand? Contact Apna Developer for a free consultation and website audit. London & Global."
+      />
       <div className="max-w-6xl mx-auto pt-16">
         <RevealOnScroll>
           <div className="text-center mb-16">

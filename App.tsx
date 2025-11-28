@@ -2,12 +2,16 @@ import React, { useState, Suspense, lazy } from 'react';
 import { Twitter, Instagram, Linkedin, Mail, ArrowRight, Loader2, MapPin, Phone, Facebook } from 'lucide-react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import TeaserChat from './components/TeaserChat';
 import Background from './components/Background';
-import WhatsAppBtn from './components/WhatsAppBtn';
 import RevealOnScroll from './components/RevealOnScroll';
+import SEO from './components/SEO';
 
-// Lazy load heavy components
+// Lazy load heavy components and fixed elements
+const TeaserChat = lazy(() => import('./components/TeaserChat'));
+const WhatsAppBtn = lazy(() => import('./components/WhatsAppBtn'));
+const BackToTop = lazy(() => import('./components/BackToTop'));
+
+// Lazy load pages
 const Services = lazy(() => import('./components/Services'));
 const Portfolio = lazy(() => import('./components/Portfolio'));
 const Team = lazy(() => import('./components/Team'));
@@ -16,8 +20,6 @@ const About = lazy(() => import('./components/About'));
 const AboutPreview = lazy(() => import('./components/AboutPreview'));
 const WhyChooseUs = lazy(() => import('./components/WhyChooseUs'));
 const WorkProcess = lazy(() => import('./components/WorkProcess'));
-const PrivacyPolicy = lazy(() => import('./components/PrivacyPolicy'));
-const TermsOfService = lazy(() => import('./components/TermsOfService'));
 
 const PageLoader = () => (
   <div className="min-h-[50vh] flex items-center justify-center">
@@ -38,6 +40,10 @@ const App: React.FC = () => {
       <Suspense fallback={<PageLoader />}>
         {currentPage === 'home' && (
           <>
+            <SEO 
+              title="Apna Developer | Digital Marketing & Web Development Agency"
+              description="Apna Developer transforms ambitious brands into market leaders through data-driven SEO, creative content, and cutting-edge web development."
+            />
             <Hero />
             <WhyChooseUs />
             <WorkProcess />
@@ -70,8 +76,6 @@ const App: React.FC = () => {
         {currentPage === 'team' && <div className="pt-20"><Team isPreview={false} onNavigate={handleNavigate} /></div>}
         {currentPage === 'contact' && <Contact />}
         {currentPage === 'about' && <About />}
-        {currentPage === 'privacy' && <PrivacyPolicy />}
-        {currentPage === 'terms' && <TermsOfService />}
       </Suspense>
     );
   };
@@ -80,7 +84,12 @@ const App: React.FC = () => {
     <div className="relative min-h-screen flex flex-col bg-slate-950 text-white font-sans selection:bg-blue-500/30">
       <Background />
       <Navbar currentPage={currentPage} onNavigate={handleNavigate} />
-      <WhatsAppBtn />
+      
+      <Suspense fallback={null}>
+        <WhatsAppBtn />
+        <BackToTop />
+        <TeaserChat />
+      </Suspense>
 
       <main className="flex-1 transition-opacity duration-300 ease-in-out">
         {renderPage()}
@@ -191,18 +200,12 @@ const App: React.FC = () => {
 
         </div>
 
-        <div className="max-w-7xl mx-auto px-6 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="max-w-7xl mx-auto px-6 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-center items-center gap-4">
            <div className="text-sm text-gray-500">
              &copy; {new Date().getFullYear()} Apna Developer. All rights reserved.
            </div>
-           <div className="flex gap-6 text-sm text-gray-500">
-             <button onClick={() => handleNavigate('privacy')} className="hover:text-white transition-colors">Privacy Policy</button>
-             <button onClick={() => handleNavigate('terms')} className="hover:text-white transition-colors">Terms of Service</button>
-           </div>
         </div>
       </footer>
-
-      <TeaserChat />
     </div>
   );
 };
