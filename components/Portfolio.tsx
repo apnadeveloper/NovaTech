@@ -24,151 +24,151 @@ const projects: ProjectItem[] = [
     image: "https://res.cloudinary.com/dmkmiztl9/image/upload/v1764320673/nybi0yzjpbn8ol7ne3om.webp", 
     description: "High-performance VPS hosting platform with automated provisioning.",
     fullDescription: "A comprehensive VPS hosting solution designed for speed and reliability. Features include automated instance provisioning, real-time resource monitoring, and a custom control panel for easy management. Built with high-availability architecture to ensure 99.9% uptime.",
-    link: "#"
+    link: "https://a1vpshosting.com/"
   },
   {
     title: "Aspect Zone Properties",
     category: "Real Estate",
-    image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=50&w=400&fm=webp&fit=crop",
+    image: "https://res.cloudinary.com/dmkmiztl9/image/upload/v1764320673/vejnx3hr3wttenbkvmy4.webp",
     description: "Luxury property portal with virtual tours and lead management.",
     fullDescription: "A premium real estate portal connecting buyers with luxury properties. The platform features 360-degree virtual tours, advanced search filtering, and a robust CRM backend for agents to manage leads and listings efficiently.",
-    link: "#"
+    link: "https://aspectzoneproperties.com/"
   },
   {
     title: "Champion Gym",
     category: "Fitness",
-    image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=50&w=400&fm=webp&fit=crop",
+    image: "https://res.cloudinary.com/dmkmiztl9/image/upload/v1764320673/a6i2dx9r5n2mmpdti3d6.webp",
     description: "Dynamic fitness membership site with class scheduling integration.",
     fullDescription: "An energetic website for a modern gym franchise. It includes member portals, class booking systems integrated with calendars, trainer profiles, and an e-commerce section for merchandise.",
-    link: "#"
+    link: "https://champion-gym.vercel.app/"
   },
   {
     title: "Elite Graphix",
     category: "Creative Agency",
-    image: "https://images.unsplash.com/photo-1600607686527-6fb886090705?q=50&w=400&fm=webp&fit=crop",
+    image: "https://res.cloudinary.com/dmkmiztl9/image/upload/v1764320673/axdlxopojnosom0nko8v.webp",
     description: "Portfolio showcase for a premier creative design and branding agency.",
     fullDescription: "A visually immersive portfolio site for a creative agency. It utilizes heavy animations and high-resolution imagery to showcase branding projects, with a focus on storytelling and visual impact.",
-    link: "#"
+    link: "https://www.elitegraphix.site/"
   },
   {
     title: "Fashion Store",
     category: "Shopify",
-    image: "https://images.unsplash.com/photo-1483985988355-763728e1935b?q=50&w=400&fm=webp&fit=crop",
+    image: "https://res.cloudinary.com/dmkmiztl9/image/upload/v1764323069/gg0misvingk2okgakiar.webp",
     description: "Modern fashion e-commerce store built on Shopify.",
     fullDescription: "A chic and modern Shopify store optimized for fashion retail. Features include advanced product filtering, lookbook integrations, sizing guides, and a streamlined mobile-first checkout process.",
-    link: "#"
+    link: "https://zainorallc.com"
   },
   {
     title: "Georgia Green Energy",
     category: "Sustainable Energy",
-    image: "https://images.unsplash.com/photo-1466611653911-95081537e5b7?q=50&w=400&fm=webp&fit=crop",
+    image: "https://res.cloudinary.com/dmkmiztl9/image/upload/v1764320674/kwhydww5n2cznochiaoy.webp",
     description: "Corporate website for a sustainable energy solutions provider.",
     fullDescription: "A professional corporate presence for a renewable energy company. The site highlights sustainability impact reports, service details, and includes a calculator for potential energy savings.",
-    link: "#"
+    link: "https://gagreenenergysvc.com/"
   },
   {
-    title: "XCross Services",
+    title: "Home Services",
     category: "Home Services",
-    image: "https://images.unsplash.com/photo-1584622050111-993a426fbf0a?q=50&w=400&fm=webp&fit=crop",
+    image: "https://res.cloudinary.com/dmkmiztl9/image/upload/v1764320674/us7yvgdyjg5ztkuorjwj.webp",
     description: "Service booking platform for home maintenance and repairs.",
     fullDescription: "An on-demand service booking platform connecting homeowners with trusted professionals. Features real-time availability, secure payments, and a review system for service providers.",
-    link: "#"
+    link: "https://homeservices-abdullah.vercel.app/"
   },
   {
     title: "Hostma",
     category: "Web Hosting",
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=50&w=400&fm=webp&fit=crop",
+    image: "https://res.cloudinary.com/dmkmiztl9/image/upload/v1764320674/aw9v1g7jde2ryhruwbis.webp",
     description: "Secure and scalable web hosting services provider.",
     fullDescription: "A sleek interface for a web hosting company offering shared, VPS, and dedicated hosting. The site focuses on clear pricing tables, feature comparisons, and a seamless onboarding flow.",
-    link: "#"
+    link: "https://hosting99.host"
   },
   {
     title: "Trecobox",
     category: "Streaming",
-    image: "https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?q=50&w=400&fm=webp&fit=crop",
+    image: "https://res.cloudinary.com/dmkmiztl9/image/upload/v1764320674/fjvmkp7xp1rtbdtzqmcw.webp",
     description: "Movie and TV show streaming entertainment hub.",
     fullDescription: "A content-rich entertainment hub for streaming movies and TV shows. The UI mimics top-tier streaming platforms with dark mode aesthetics, personalized recommendations, and smooth playback interfaces.",
-    link: "#"
+    link: "https://trecobox.com.br/"
   },
   {
     title: "Kinza Designer",
     category: "Digital Portfolio",
-    image: "https://images.unsplash.com/photo-1509395176047-4a66953fd231?q=50&w=400&fm=webp&fit=crop",
+    image: "https://res.cloudinary.com/dmkmiztl9/image/upload/v1764320675/rq1m7njzlmog4rjdabfr.webp",
     description: "Personal portfolio for a digital designer and marketer.",
     fullDescription: "A minimalist yet bold portfolio for a freelance designer. It showcases project case studies, skill sets, and includes a blog section for design thought leadership.",
-    link: "#"
+    link: "https://kinzadesigndelight.com/"
   },
   {
     title: "Korlexo",
-    category: "eCommerce",
-    image: "https://images.unsplash.com/photo-1510017803434-a899398421b3?q=50&w=400&fm=webp&fit=crop",
+    category: "Shopify",
+    image: "https://res.cloudinary.com/dmkmiztl9/image/upload/v1764320674/vzzkb3supogisq0r4ywp.webp",
     description: "Premium smartwatch and accessories online store.",
     fullDescription: "An e-commerce destination for tech wearables. The site emphasizes product features with high-quality close-ups, comparison tools, and customer reviews to drive conversions.",
-    link: "#"
+    link: "korlexo.com"
   },
   {
     title: "L'Odeur Perfumes",
     category: "Luxury",
-    image: "https://images.unsplash.com/photo-1592914610354-fd354ea45e48?q=50&w=400&fm=webp&fit=crop",
+    image: "https://res.cloudinary.com/dmkmiztl9/image/upload/v1764320675/c0fy4f4cvofvmmlf71i2.webp",
     description: "Elegant e-commerce experience for an exclusive fragrance brand.",
     fullDescription: "A luxury e-commerce experience designed to evoke the senses. It features sophisticated typography, atmospheric photography, and a scent profile guide to help customers choose their perfect fragrance.",
-    link: "#"
+    link: "https://odeurexquise.vercel.app/"
   },
   {
     title: "Fast Restaurant",
     category: "Food & Beverage",
-    image: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=50&w=400&fm=webp&fit=crop",
+    image: "https://res.cloudinary.com/dmkmiztl9/image/upload/v1764320675/rin2cccvtqt1u8xh4sy7.webp",
     description: "Online ordering system for a fast-food restaurant chain.",
     fullDescription: "A vibrant and appetizing online ordering platform. It supports complex menu customizations, location-based delivery tracking, and loyalty program integration.",
-    link: "#"
+    link: "https://restaurantproject-mu.vercel.app/"
   },
   {
     title: "RM Gadgets",
     category: "Tech Accessories",
-    image: "https://images.unsplash.com/photo-1550009158-9ebf69173e03?q=50&w=400&fm=webp&fit=crop",
+    image: "https://res.cloudinary.com/dmkmiztl9/image/upload/v1764320676/qm6uzcepu05x7vekngh8.webp",
     description: "Gadgets and tech accessories online retail store.",
     fullDescription: "A tech-focused retail store with a clean, grid-based layout. It features 'Deal of the Day' countdowns, bundled product offers, and a robust search with instant suggestions.",
-    link: "#"
+    link: "https://rmtechstore.eu"
   },
   {
     title: "SK Digital Creator",
     category: "Digital Agency",
-    image: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?q=50&w=400&fm=webp&fit=crop",
+    image: "https://res.cloudinary.com/dmkmiztl9/image/upload/v1764320675/mokwhti2nn7roofgf2xg.webp",
     description: "Digital marketing agency focused on brand growth.",
     fullDescription: "A corporate website for a digital marketing agency. It outlines services, presents case studies with data visualizations, and offers lead magnets to capture potential client information.",
-    link: "#"
+    link: "https://www.skdigitalcreator.com/"
   },
   {
     title: "Smaart Cleaning",
     category: "Cleaning",
-    image: "https://images.unsplash.com/photo-1585421514738-01798e1e7f3b?q=50&w=400&fm=webp&fit=crop",
+    image: "https://res.cloudinary.com/dmkmiztl9/image/upload/v1764320675/p4d2pycdccnqufa0zfvk.webp",
     description: "Eco-friendly cleaning services for smart buildings.",
     fullDescription: "A clean and fresh website for a professional cleaning service. It includes an instant quote calculator, before/after galleries, and easy booking forms for residential and commercial clients.",
-    link: "#"
+    link: "https://smaartcleaning.com"
   },
   {
     title: "Swanley Phone Repair",
     category: "Repair Services",
-    image: "https://images.unsplash.com/photo-1588508065123-287b28e013da?q=50&w=400&fm=webp&fit=crop",
+    image: "https://res.cloudinary.com/dmkmiztl9/image/upload/v1764320675/thbj4c65isjyw8mbex0v.webp",
     description: "Mobile phone and electronics repair service booking.",
     fullDescription: "A local business website focused on trust and speed. It allows customers to book repair slots, check estimated repair costs, and track the status of their device repair.",
-    link: "#"
+    link: "https://swanleyphonerepair.com/"
   },
   {
     title: "Synapse",
     category: "Marketing",
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=50&w=400&fm=webp&fit=crop",
+    image: "https://res.cloudinary.com/dmkmiztl9/image/upload/v1764320673/bgkiduimautwcgocldgy.webp",
     description: "Strategic marketing agency for digital transformation.",
     fullDescription: "A forward-thinking agency site using abstract 3D elements to represent innovation. It communicates complex marketing strategies through simple, interactive diagrams.",
-    link: "#"
+    link: "https://www.synapsedma.site/"
   },
   {
     title: "Velvet Bean",
     category: "Coffee Shop",
-    image: "https://images.unsplash.com/photo-1497935586351-b67a49e012bf?q=50&w=400&fm=webp&fit=crop",
+    image: "https://res.cloudinary.com/dmkmiztl9/image/upload/v1764320674/qz192qxbe6ubv8winqd5.webp",
     description: "Artisan coffee shop website with online menu and reservations.",
     fullDescription: "A cozy and inviting website for a specialty coffee shop. It features a digital menu, table reservation system, and an online shop for coffee beans and brewing equipment.",
-    link: "#"
+    link: "https://velvetbeancoffee.vercel.app/"
   }
 ];
 
