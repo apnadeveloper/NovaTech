@@ -21,7 +21,7 @@ const projects: ProjectItem[] = [
   {
     title: "A1 VPS Hosting",
     category: "Web Hosting",
-    image: "https://images.unsplash.com/photo-1601597111158-2fceff292cdc?q=50&w=400&fm=webp&fit=crop", 
+    image: "https://res.cloudinary.com/dmkmiztl9/image/upload/v1764320673/nybi0yzjpbn8ol7ne3om.webp", 
     description: "High-performance VPS hosting platform with automated provisioning.",
     fullDescription: "A comprehensive VPS hosting solution designed for speed and reliability. Features include automated instance provisioning, real-time resource monitoring, and a custom control panel for easy management. Built with high-availability architecture to ensure 99.9% uptime.",
     link: "#"
