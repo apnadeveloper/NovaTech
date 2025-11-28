@@ -9,21 +9,18 @@ interface RevealTextProps {
 }
 
 const RevealText: React.FC<RevealTextProps> = ({ text, delay = 0, className = "" }) => {
+  // Optimized: Split by words instead of characters to drastically reduce DOM nodes for LCP
   return (
-    <span className={`inline-flex flex-wrap justify-center gap-x-[0.2em] ${className}`}>
+    <span className={`inline-flex flex-wrap justify-center gap-x-[0.25em] ${className}`}>
       {text.split(" ").map((word, i) => (
-        <span key={i} className="inline-flex whitespace-nowrap">
-          {word.split("").map((char, j) => (
-            <span
-              key={j}
-              className="animate-reveal inline-block"
-              style={{
-                animationDelay: `${delay + i * 0.05 + j * 0.02}s`, // Faster animation for LCP
-              }}
-            >
-              {char}
-            </span>
-          ))}
+        <span
+          key={i}
+          className="animate-reveal inline-block"
+          style={{
+            animationDelay: `${delay + i * 0.15}s`,
+          }}
+        >
+          {word}
         </span>
       ))}
     </span>

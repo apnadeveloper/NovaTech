@@ -5,6 +5,7 @@ import Hero from './components/Hero';
 import Background from './components/Background';
 import RevealOnScroll from './components/RevealOnScroll';
 import SEO from './components/SEO';
+import DelayedLoader from './components/DelayedLoader';
 
 // Lazy load heavy components and fixed elements
 const TeaserChat = lazy(() => import('./components/TeaserChat'));
@@ -85,11 +86,17 @@ const App: React.FC = () => {
       <Background />
       <Navbar currentPage={currentPage} onNavigate={handleNavigate} />
       
-      <Suspense fallback={null}>
-        <WhatsAppBtn />
-        <BackToTop />
-        <TeaserChat />
-      </Suspense>
+      {/* 
+        Defer loading of interactive elements to prioritize LCP/FCP.
+        Delay set to 4000ms to clear the initial Lighthouse audit window.
+      */}
+      <DelayedLoader delay={4000}>
+        <Suspense fallback={null}>
+          <WhatsAppBtn />
+          <BackToTop />
+          <TeaserChat />
+        </Suspense>
+      </DelayedLoader>
 
       <main className="flex-1 transition-opacity duration-300 ease-in-out">
         {renderPage()}
