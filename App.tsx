@@ -6,6 +6,7 @@ import Background from './components/Background';
 import RevealOnScroll from './components/RevealOnScroll';
 import SEO from './components/SEO';
 import DelayedLoader from './components/DelayedLoader';
+import { ServiceItem } from './components/ServiceData';
 
 // Lazy load heavy components and fixed elements
 const TeaserChat = lazy(() => import('./components/TeaserChat'));
@@ -14,6 +15,7 @@ const BackToTop = lazy(() => import('./components/BackToTop'));
 
 // Lazy load pages
 const Services = lazy(() => import('./components/Services'));
+const ServiceDetail = lazy(() => import('./components/ServiceDetail'));
 const Portfolio = lazy(() => import('./components/Portfolio'));
 const Contact = lazy(() => import('./components/Contact'));
 const About = lazy(() => import('./components/About'));
@@ -29,9 +31,16 @@ const PageLoader = () => (
 
 const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState('home');
+  const [selectedService, setSelectedService] = useState<ServiceItem | null>(null);
 
   const handleNavigate = (page: string) => {
     setCurrentPage(page);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleServiceClick = (service: ServiceItem) => {
+    setSelectedService(service);
+    setCurrentPage('service-detail');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -47,7 +56,11 @@ const App: React.FC = () => {
             <Hero />
             <WhyChooseUs />
             <WorkProcess />
-            <Services isPreview={true} onNavigate={handleNavigate} />
+            <Services 
+              isPreview={true} 
+              onNavigate={handleNavigate} 
+              onServiceClick={handleServiceClick}
+            />
             <Portfolio isPreview={true} onNavigate={handleNavigate} />
             <AboutPreview onNavigate={handleNavigate} />
             
@@ -70,7 +83,20 @@ const App: React.FC = () => {
             </section>
           </>
         )}
-        {currentPage === 'services' && <Services isPreview={false} onNavigate={handleNavigate} />}
+        {currentPage === 'services' && (
+          <Services 
+            isPreview={false} 
+            onNavigate={handleNavigate} 
+            onServiceClick={handleServiceClick}
+          />
+        )}
+        {currentPage === 'service-detail' && selectedService && (
+          <ServiceDetail 
+            service={selectedService} 
+            onBack={() => handleNavigate('services')} 
+            onNavigate={handleNavigate}
+          />
+        )}
         {currentPage === 'work' && <Portfolio isPreview={false} onNavigate={handleNavigate} />}
         {currentPage === 'contact' && <Contact />}
         {currentPage === 'about' && <About />}
@@ -115,7 +141,7 @@ const App: React.FC = () => {
                   <span className="text-[10px] font-bold text-white tracking-[0.2em] leading-none mt-1">DEVELOPER</span>
                </div>
             </div>
-            <p className="text-sm leading-relaxed text-gray-400">
+            <p className="text-base leading-relaxed text-gray-400">
               Your trusted partner for comprehensive digital marketing solutions that drive growth and maximize online presence.
             </p>
             <div className="flex gap-3">
@@ -134,13 +160,13 @@ const App: React.FC = () => {
           {/* Column 2: Quick Links */}
           <div>
             <h3 className="text-lg font-bold text-white mb-6 uppercase tracking-wide">Quick Links</h3>
-            <ul className="space-y-3 text-sm">
+            <ul className="space-y-3 text-base">
               {[
                 { label: 'Home', id: 'home' },
-                { label: 'Services', id: 'services' },
-                { label: 'Portfolio', id: 'work' },
+                { label: 'Our Services', id: 'services' },
+                { label: 'Our Work', id: 'work' },
                 { label: 'About Us', id: 'about' },
-                { label: 'Contact', id: 'contact' },
+                { label: 'Contact Us', id: 'contact' },
               ].map((item, idx) => (
                 <li key={idx}>
                    <button 
@@ -157,7 +183,7 @@ const App: React.FC = () => {
           {/* Column 3: Our Services */}
           <div>
             <h3 className="text-lg font-bold text-white mb-6 uppercase tracking-wide">Our Services</h3>
-            <ul className="space-y-3 text-sm">
+            <ul className="space-y-3 text-base">
               {[
                 'Website Designing',
                 'Website Development',
@@ -182,7 +208,7 @@ const App: React.FC = () => {
           {/* Column 4: Contact Info */}
           <div>
             <h3 className="text-lg font-bold text-white mb-6 uppercase tracking-wide">Contact Info</h3>
-            <div className="space-y-5 text-sm">
+            <div className="space-y-5 text-base">
               <div className="flex items-start gap-3 group">
                  <MapPin className="w-5 h-5 text-white mt-0.5 shrink-0 group-hover:text-blue-400 transition-colors" />
                  <span className="text-gray-300 group-hover:text-white transition-colors">Dar-ul-Ehsan Town - Okara, PAKISTAN</span>
@@ -205,7 +231,7 @@ const App: React.FC = () => {
         </div>
 
         <div className="max-w-7xl mx-auto px-6 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-center items-center gap-4">
-           <div className="text-sm text-white">
+           <div className="text-base text-white">
              &copy; {new Date().getFullYear()} Apna Developer. All rights reserved.
            </div>
         </div>

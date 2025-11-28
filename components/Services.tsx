@@ -1,79 +1,16 @@
 import React from 'react';
 import { 
-  Palette, Code2, ShoppingBag, Store, FileCode, Megaphone, Search, 
-  ShieldCheck, PenTool, Video, Share2, Terminal, ArrowRight, 
-  Stethoscope, Landmark, Briefcase, GraduationCap, Building2, Plus, Minus 
+  ShoppingBag, Stethoscope, Landmark, Briefcase, GraduationCap, Building2, Plus, Minus, ArrowRight 
 } from 'lucide-react';
 import RevealOnScroll from './RevealOnScroll';
 import SEO from './SEO';
+import { services, ServiceItem } from './ServiceData';
 
 interface ServicesProps {
   isPreview?: boolean;
   onNavigate?: (page: string) => void;
+  onServiceClick?: (service: ServiceItem) => void;
 }
-
-const services = [
-  {
-    icon: <Palette className="w-6 h-6 text-pink-400" />,
-    title: "Website Design",
-    description: "Stunning, user-centric designs that captivate your audience and reflect your brand identity."
-  },
-  {
-    icon: <Code2 className="w-6 h-6 text-blue-400" />,
-    title: "Website Development",
-    description: "Robust, scalable, and high-performance websites built with modern technologies like React and Next.js."
-  },
-  {
-    icon: <ShoppingBag className="w-6 h-6 text-purple-400" />,
-    title: "eCommerce Development",
-    description: "Custom online stores optimized for conversions, seamless checkout experiences, and inventory management."
-  },
-  {
-    icon: <Store className="w-6 h-6 text-green-400" />,
-    title: "Shopify Development",
-    description: "Expert Shopify setup, theme customization, and app integration to power your dropshipping or retail business."
-  },
-  {
-    icon: <FileCode className="w-6 h-6 text-orange-400" />,
-    title: "WordPress Development",
-    description: "Flexible and easy-to-manage WordPress sites, from custom themes to plugin development."
-  },
-  {
-    icon: <Megaphone className="w-6 h-6 text-red-400" />,
-    title: "Digital Marketing",
-    description: "Comprehensive strategies including PPC, email marketing, and content campaigns to drive traffic and sales."
-  },
-  {
-    icon: <Search className="w-6 h-6 text-cyan-400" />,
-    title: "SEO Optimization",
-    description: "Boost your organic visibility with technical SEO, keyword research, and on-page optimization."
-  },
-  {
-    icon: <ShieldCheck className="w-6 h-6 text-emerald-400" />,
-    title: "Speed & Web Security",
-    description: "Lightning-fast load times and ironclad security protocols to protect your data and improve user experience."
-  },
-  {
-    icon: <PenTool className="w-6 h-6 text-yellow-400" />,
-    title: "Graphic Design",
-    description: "Eye-catching visuals for logos, branding materials, social media posts, and marketing collateral."
-  },
-  {
-    icon: <Video className="w-6 h-6 text-indigo-400" />,
-    title: "Video Editing",
-    description: "Professional video editing for commercials, social media reels, and corporate presentations."
-  },
-  {
-    icon: <Share2 className="w-6 h-6 text-rose-400" />,
-    title: "Social Media Marketing",
-    description: "Engage your audience on Instagram, LinkedIn, and TikTok with viral content strategies."
-  },
-  {
-    icon: <Terminal className="w-6 h-6 text-slate-400" />,
-    title: "Python Script Development",
-    description: "Custom automation scripts, data scraping, and backend logic to streamline your business operations."
-  }
-];
 
 const industries = [
   { icon: <ShoppingBag />, name: "E-Commerce" },
@@ -103,12 +40,21 @@ const faqs = [
   }
 ];
 
-const Services: React.FC<ServicesProps> = ({ isPreview = false, onNavigate }) => {
+const Services: React.FC<ServicesProps> = ({ isPreview = false, onNavigate, onServiceClick }) => {
   const displayServices = isPreview ? services.slice(0, 3) : services;
   const [openFaq, setOpenFaq] = React.useState<number | null>(null);
 
   const toggleFaq = (index: number) => {
     setOpenFaq(openFaq === index ? null : index);
+  };
+
+  const handleServiceClick = (service: ServiceItem) => {
+    if (onServiceClick) {
+      onServiceClick(service);
+    } else if (onNavigate) {
+      // Fallback for preview mode if needed, though usually we want detailed view now
+      onNavigate('services');
+    }
   };
 
   return (
@@ -137,7 +83,8 @@ const Services: React.FC<ServicesProps> = ({ isPreview = false, onNavigate }) =>
             {displayServices.map((service, index) => (
               <RevealOnScroll key={index} delay={index * 0.1}>
                 <div 
-                  className="group h-full p-8 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-purple-500/10 flex flex-col"
+                  onClick={() => handleServiceClick(service)}
+                  className="group h-full p-8 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-purple-500/10 flex flex-col cursor-pointer"
                 >
                   <div className="mb-6 p-3 bg-white/5 rounded-xl w-fit group-hover:bg-white/10 transition-colors">
                     {service.icon}
@@ -146,11 +93,11 @@ const Services: React.FC<ServicesProps> = ({ isPreview = false, onNavigate }) =>
                   <p className="text-gray-400 leading-relaxed text-sm mb-4 flex-grow">
                     {service.description}
                   </p>
-                  {!isPreview && (
-                     <div className="flex items-center text-blue-400 text-sm font-medium mt-auto group-hover:text-white transition-colors">
-                       Learn more <ArrowRight className="w-4 h-4 ml-2" />
-                     </div>
-                  )}
+                  
+                   <div className="flex items-center text-blue-400 text-sm font-medium mt-auto group-hover:text-white transition-colors">
+                     Learn more <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
+                   </div>
+                  
                 </div>
               </RevealOnScroll>
             ))}
@@ -218,7 +165,7 @@ const Services: React.FC<ServicesProps> = ({ isPreview = false, onNavigate }) =>
                         {openFaq === idx ? <Minus className="w-5 h-5 text-blue-400" /> : <Plus className="w-5 h-5 text-gray-400" />}
                       </button>
                       <div 
-                        className={`overflow-hidden transition-all duration-300 ${openFaq === idx ? 'max-h-40 opacity-100' : 'max-h-0 opacity-0'}`}
+                        className={`transition-all duration-500 ease-in-out ${openFaq === idx ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'}`}
                       >
                         <p className="p-6 pt-0 text-gray-400 leading-relaxed">
                           {faq.answer}

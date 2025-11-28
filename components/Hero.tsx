@@ -42,7 +42,7 @@ const Hero: React.FC = () => {
         </div>
 
         {/* Removed RevealOnScroll wrapper for LCP Optimization */}
-        <div className="flex flex-col items-center justify-center gap-2">
+        <div className="flex flex-col items-center justify-center gap-1">
            <h1 className="sr-only">Digital Excellence Redefined.</h1>
            <div className="text-5xl sm:text-7xl md:text-8xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-b from-white via-white to-slate-400 pb-2">
              <RevealText text="Digital Excellence" delay={0} />
