@@ -22,6 +22,7 @@ const About = lazy(() => import('./components/About'));
 const AboutPreview = lazy(() => import('./components/AboutPreview'));
 const WhyChooseUs = lazy(() => import('./components/WhyChooseUs'));
 const WorkProcess = lazy(() => import('./components/WorkProcess'));
+const Testimonials = lazy(() => import('./components/Testimonials'));
 
 const PageLoader = () => (
   <div className="min-h-[50vh] flex items-center justify-center">
@@ -81,6 +82,8 @@ const App: React.FC = () => {
                 </div>
               </RevealOnScroll>
             </section>
+            
+            <Testimonials />
           </>
         )}
         {currentPage === 'services' && (

@@ -27,7 +27,7 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ service, onBack, onNaviga
             <div className="flex flex-col md:flex-row gap-12 items-start mb-24">
               <div className="flex-1 space-y-6">
                 <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500/20 to-purple-500/20 flex items-center justify-center border border-white/10 mb-6">
-                   {React.cloneElement(service.icon as React.ReactElement, { className: "w-8 h-8 text-white" })}
+                   {React.cloneElement(service.icon as React.ReactElement<any>, { className: "w-8 h-8 text-white" })}
                 </div>
                 <h1 className="text-4xl sm:text-6xl font-bold text-white">{service.title}</h1>
                 <p className="text-xl text-gray-300 leading-relaxed max-w-2xl">
