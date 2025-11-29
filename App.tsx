@@ -12,6 +12,7 @@ import { ServiceItem } from './components/ServiceData';
 const TeaserChat = lazy(() => import('./components/TeaserChat'));
 const WhatsAppBtn = lazy(() => import('./components/WhatsAppBtn'));
 const BackToTop = lazy(() => import('./components/BackToTop'));
+const NewsletterPopup = lazy(() => import('./components/NewsletterPopup'));
 
 // Lazy load pages
 const Services = lazy(() => import('./components/Services'));
@@ -85,6 +86,7 @@ const App: React.FC = () => {
             </section>
             
             <Testimonials />
+            <NewsletterPopup />
           </>
         )}
         {currentPage === 'services' && (
