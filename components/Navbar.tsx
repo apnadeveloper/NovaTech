@@ -27,7 +27,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
   const navItems = [
     { label: 'HOME', id: 'home' },
     { label: 'OUR SERVICES', id: 'services' },
-    { label: 'PRICING', id: 'pricing' },
+    { label: 'OUR PLANS', id: 'pricing' },
     { label: 'OUR WORK', id: 'work' },
     { label: 'ABOUT US', id: 'about' },
     { label: 'CONTACT US', id: 'contact' }
