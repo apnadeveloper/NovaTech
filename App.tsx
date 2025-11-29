@@ -1,5 +1,5 @@
 import React, { useState, Suspense, lazy } from 'react';
-import { Twitter, Instagram, Linkedin, Mail, ArrowRight, Loader2, MapPin, Phone, Facebook } from 'lucide-react';
+import { Twitter, Instagram, Linkedin, Mail, ArrowRight, Loader2, MapPin, Phone, Facebook, Rocket } from 'lucide-react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Background from './components/Background';
@@ -23,6 +23,7 @@ const AboutPreview = lazy(() => import('./components/AboutPreview'));
 const WhyChooseUs = lazy(() => import('./components/WhyChooseUs'));
 const WorkProcess = lazy(() => import('./components/WorkProcess'));
 const Testimonials = lazy(() => import('./components/Testimonials'));
+const Pricing = lazy(() => import('./components/Pricing'));
 
 const PageLoader = () => (
   <div className="min-h-[50vh] flex items-center justify-center">
@@ -100,6 +101,7 @@ const App: React.FC = () => {
             onNavigate={handleNavigate}
           />
         )}
+        {currentPage === 'pricing' && <Pricing onNavigate={handleNavigate} />}
         {currentPage === 'work' && <Portfolio isPreview={false} onNavigate={handleNavigate} />}
         {currentPage === 'contact' && <Contact />}
         {currentPage === 'about' && <About />}
@@ -134,15 +136,13 @@ const App: React.FC = () => {
           
           {/* Column 1: Brand & Socials */}
           <div className="space-y-6">
-            <div className="flex items-center gap-3">
-               <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shrink-0 relative overflow-hidden shadow-lg shadow-white/10">
-                  <span className="text-blue-600 font-bold text-2xl z-10 relative top-[1px]">A</span>
-                  <div className="absolute w-14 h-4 border border-slate-900 rounded-[100%] rotate-[-45deg] top-4"></div>
+            <div className="flex items-center gap-2">
+               <div className="bg-gradient-to-br from-purple-600 to-blue-600 p-2 rounded-lg">
+                  <Rocket className="w-5 h-5 text-white" />
                </div>
-               <div className="flex flex-col">
-                  <span className="text-lg font-bold text-white tracking-widest leading-none">APNA</span>
-                  <span className="text-[10px] font-bold text-white tracking-[0.2em] leading-none mt-1">DEVELOPER</span>
-               </div>
+               <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">
+                  Apna Developer
+               </span>
             </div>
             <p className="text-base leading-relaxed text-gray-400">
               Your trusted partner for comprehensive digital marketing solutions that drive growth and maximize online presence.
@@ -167,6 +167,7 @@ const App: React.FC = () => {
               {[
                 { label: 'Home', id: 'home' },
                 { label: 'Our Services', id: 'services' },
+                { label: 'Pricing', id: 'pricing' },
                 { label: 'Our Work', id: 'work' },
                 { label: 'About Us', id: 'about' },
                 { label: 'Contact Us', id: 'contact' },
